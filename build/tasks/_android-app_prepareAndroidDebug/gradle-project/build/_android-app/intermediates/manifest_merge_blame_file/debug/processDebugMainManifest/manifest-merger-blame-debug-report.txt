@@ -1,0 +1,126 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="org.example.namespace"
+4    android:versionCode="1"
+5    android:versionName="unspecified" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="23"
+9        android:targetSdkVersion="36" />
+10
+11    <permission
+11-->[core-1.16.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/512664a6a0dfe232294286fc59acd438/transformed/core-1.16.0/AndroidManifest.xml:22:5-24:47
+12        android:name="org.example.namespace.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+12-->[core-1.16.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/512664a6a0dfe232294286fc59acd438/transformed/core-1.16.0/AndroidManifest.xml:23:9-81
+13        android:protectionLevel="signature" />
+13-->[core-1.16.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/512664a6a0dfe232294286fc59acd438/transformed/core-1.16.0/AndroidManifest.xml:24:9-44
+14
+15    <uses-permission android:name="org.example.namespace.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+15-->[core-1.16.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/512664a6a0dfe232294286fc59acd438/transformed/core-1.16.0/AndroidManifest.xml:26:5-97
+15-->[core-1.16.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/512664a6a0dfe232294286fc59acd438/transformed/core-1.16.0/AndroidManifest.xml:26:22-94
+16
+17    <application
+17-->/Users/saicharan/Developer/CrossPlatform/binge-diary/android-app/src/AndroidManifest.xml:2:5-10:19
+18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+18-->[core-1.16.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/512664a6a0dfe232294286fc59acd438/transformed/core-1.16.0/AndroidManifest.xml:28:18-86
+19        android:debuggable="true"
+20        android:extractNativeLibs="false" >
+21        <activity
+21-->/Users/saicharan/Developer/CrossPlatform/binge-diary/android-app/src/AndroidManifest.xml:3:9-9:20
+22            android:name="hello.world.MainActivity"
+22-->/Users/saicharan/Developer/CrossPlatform/binge-diary/android-app/src/AndroidManifest.xml:3:19-58
+23            android:exported="true" >
+23-->/Users/saicharan/Developer/CrossPlatform/binge-diary/android-app/src/AndroidManifest.xml:4:19-42
+24            <intent-filter>
+24-->/Users/saicharan/Developer/CrossPlatform/binge-diary/android-app/src/AndroidManifest.xml:5:13-8:29
+25                <action android:name="android.intent.action.MAIN" />
+25-->/Users/saicharan/Developer/CrossPlatform/binge-diary/android-app/src/AndroidManifest.xml:6:17-69
+25-->/Users/saicharan/Developer/CrossPlatform/binge-diary/android-app/src/AndroidManifest.xml:6:25-66
+26
+27                <category android:name="android.intent.category.LAUNCHER" />
+27-->/Users/saicharan/Developer/CrossPlatform/binge-diary/android-app/src/AndroidManifest.xml:7:17-77
+27-->/Users/saicharan/Developer/CrossPlatform/binge-diary/android-app/src/AndroidManifest.xml:7:27-74
+28            </intent-filter>
+29        </activity>
+30
+31        <provider
+31-->[profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:24:9-32:20
+32            android:name="androidx.startup.InitializationProvider"
+32-->[profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:25:13-67
+33            android:authorities="org.example.namespace.androidx-startup"
+33-->[profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:26:13-68
+34            android:exported="false" >
+34-->[profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:27:13-37
+35            <meta-data
+35-->[profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:29:13-31:52
+36                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+36-->[profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:30:17-85
+37                android:value="androidx.startup" />
+37-->[profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:31:17-49
+38            <meta-data
+38-->[emoji2-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/aa530d97d78f71501267f10ca2c8509b/transformed/emoji2-1.4.0/AndroidManifest.xml:29:13-31:52
+39                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+39-->[emoji2-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/aa530d97d78f71501267f10ca2c8509b/transformed/emoji2-1.4.0/AndroidManifest.xml:30:17-75
+40                android:value="androidx.startup" />
+40-->[emoji2-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/aa530d97d78f71501267f10ca2c8509b/transformed/emoji2-1.4.0/AndroidManifest.xml:31:17-49
+41            <meta-data
+41-->[lifecycle-process-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/100964860691972a9d2283746fcd0e73/transformed/lifecycle-process-2.9.4/AndroidManifest.xml:29:13-31:52
+42                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+42-->[lifecycle-process-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/100964860691972a9d2283746fcd0e73/transformed/lifecycle-process-2.9.4/AndroidManifest.xml:30:17-78
+43                android:value="androidx.startup" />
+43-->[lifecycle-process-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/100964860691972a9d2283746fcd0e73/transformed/lifecycle-process-2.9.4/AndroidManifest.xml:31:17-49
+44        </provider>
+45
+46        <receiver
+46-->[profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:34:9-52:20
+47            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+47-->[profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:35:13-76
+48            android:directBootAware="false"
+48-->[profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:36:13-44
+49            android:enabled="true"
+49-->[profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:37:13-35
+50            android:exported="true"
+50-->[profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:38:13-36
+51            android:permission="android.permission.DUMP" >
+51-->[profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:39:13-57
+52            <intent-filter>
+52-->[profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:40:13-42:29
+53                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+53-->[profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:17-91
+53-->[profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:25-88
+54            </intent-filter>
+55            <intent-filter>
+55-->[profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:43:13-45:29
+56                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+56-->[profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:17-85
+56-->[profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:25-82
+57            </intent-filter>
+58            <intent-filter>
+58-->[profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:46:13-48:29
+59                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+59-->[profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:17-88
+59-->[profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:25-85
+60            </intent-filter>
+61            <intent-filter>
+61-->[profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:49:13-51:29
+62                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+62-->[profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:17-95
+62-->[profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:25-92
+63            </intent-filter>
+64        </receiver>
+65
+66        <uses-library
+66-->[window-1.5.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/980571cf3326a69d19e1f4b920a11b45/transformed/window-1.5.0/AndroidManifest.xml:23:9-25:40
+67            android:name="androidx.window.extensions"
+67-->[window-1.5.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/980571cf3326a69d19e1f4b920a11b45/transformed/window-1.5.0/AndroidManifest.xml:24:13-54
+68            android:required="false" />
+68-->[window-1.5.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/980571cf3326a69d19e1f4b920a11b45/transformed/window-1.5.0/AndroidManifest.xml:25:13-37
+69        <uses-library
+69-->[window-1.5.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/980571cf3326a69d19e1f4b920a11b45/transformed/window-1.5.0/AndroidManifest.xml:26:9-28:40
+70            android:name="androidx.window.sidecar"
+70-->[window-1.5.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/980571cf3326a69d19e1f4b920a11b45/transformed/window-1.5.0/AndroidManifest.xml:27:13-51
+71            android:required="false" />
+71-->[window-1.5.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/980571cf3326a69d19e1f4b920a11b45/transformed/window-1.5.0/AndroidManifest.xml:28:13-37
+72    </application>
+73
+74</manifest>

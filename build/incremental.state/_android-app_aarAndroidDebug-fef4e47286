@@ -1,0 +1,22 @@
+{
+    "codeVersion": "0.11.0",
+    "inputValues": {
+        "outputPath": "/Users/saicharan/Developer/CrossPlatform/binge-diary/build/tasks/_android-app_aarAndroidDebug/android-app-jvm.aar",
+        "requiredPackagingDirs": "[[]]"
+    },
+    "inputFiles": [
+        "/Users/saicharan/Developer/CrossPlatform/binge-diary/build/tasks/_android-app_jarAndroidDebug/android-app-jvm.jar"
+    ],
+    "inputFilesState": {
+        "/Users/saicharan/Developer/CrossPlatform/binge-diary/build/tasks/_android-app_jarAndroidDebug/android-app-jvm.jar": "size 3274 mtime 2026-06-06T18:41:02.310885593Z mode 420 owner saicharan group staff"
+    },
+    "outputValues": {},
+    "outputFiles": [
+        "/Users/saicharan/Developer/CrossPlatform/binge-diary/build/tasks/_android-app_aarAndroidDebug/android-app-jvm.aar"
+    ],
+    "outputFilesState": {
+        "/Users/saicharan/Developer/CrossPlatform/binge-diary/build/tasks/_android-app_aarAndroidDebug/android-app-jvm.aar": "size 3065 mtime 2026-06-06T18:41:02.318242218Z mode 420 owner saicharan group staff"
+    },
+    "excludedOutputFiles": [],
+    "dynamicInputs": {}
+}

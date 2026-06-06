@@ -1,0 +1,17 @@
+{
+    "codeVersion": "0.11.0",
+    "inputValues": {
+        "%outputs%": "/Users/saicharan/Developer/CrossPlatform/binge-diary/build/generated/android-app/test/src/compose/resources/accessors",
+        "makeAccessorsPublic": "false",
+        "packageName": "\"android_app.generated.resources\"",
+        "packagingDir": "\"composeResources/android_app.generated.resources/\"",
+        "resClassName": "\"Res\""
+    },
+    "inputFiles": [],
+    "inputFilesState": {},
+    "outputValues": {},
+    "outputFiles": [],
+    "outputFilesState": {},
+    "excludedOutputFiles": [],
+    "dynamicInputs": {}
+}

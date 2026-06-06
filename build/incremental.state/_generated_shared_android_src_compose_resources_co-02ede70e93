@@ -1,0 +1,18 @@
+{
+    "codeVersion": "0.11.0",
+    "inputValues": {
+        "%outputs%": "/Users/saicharan/Developer/CrossPlatform/binge-diary/build/generated/shared/android/src/compose/resources/collectors",
+        "makeAccessorsPublic": "false",
+        "packageName": "\"shared.generated.resources\"",
+        "resClassName": "\"Res\"",
+        "shouldGenerateCode": "false",
+        "useActualModifier": "true"
+    },
+    "inputFiles": [],
+    "inputFilesState": {},
+    "outputValues": {},
+    "outputFiles": [],
+    "outputFilesState": {},
+    "excludedOutputFiles": [],
+    "dynamicInputs": {}
+}

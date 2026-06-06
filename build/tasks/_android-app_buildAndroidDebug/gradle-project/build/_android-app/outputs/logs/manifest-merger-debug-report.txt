@@ -1,0 +1,340 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/saicharan/Developer/CrossPlatform/binge-diary/android-app/src/AndroidManifest.xml:1:1-11:12
+INJECTED from /Users/saicharan/Developer/CrossPlatform/binge-diary/android-app/src/AndroidManifest.xml:1:1-11:12
+INJECTED from /Users/saicharan/Developer/CrossPlatform/binge-diary/android-app/src/AndroidManifest.xml:1:1-11:12
+INJECTED from /Users/saicharan/Developer/CrossPlatform/binge-diary/android-app/src/AndroidManifest.xml:1:1-11:12
+MERGED from [android-app-jvm.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/477aae23e5897a4109d8b2e90854bb5e/transformed/android-app-jvm/AndroidManifest.xml:2:1-63
+MERGED from [shared-jvm.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/01111dd87fa9df89b9a19a6e9d404295/transformed/shared-jvm/AndroidManifest.xml:2:1-63
+MERGED from [activity-compose-1.8.2.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/1ebb17be3ac23fbe86253c2da83680f7/transformed/activity-compose-1.8.2/AndroidManifest.xml:2:1-7:12
+MERGED from [activity-ktx-1.8.2.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/e7827544a2bda7c9649a3bc9e94fe894/transformed/activity-ktx-1.8.2/AndroidManifest.xml:2:1-7:12
+MERGED from [activity-1.8.2.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/a22807043e932047358dad63f7113ab5/transformed/activity-1.8.2/AndroidManifest.xml:17:1-22:12
+MERGED from [core-ktx-1.16.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/99a33480a2d78589dc997c8474633344/transformed/core-ktx-1.16.0/AndroidManifest.xml:2:1-7:12
+MERGED from [lifecycle-viewmodel-ktx-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/2cf59a9899fd5bae2a67113cfba3127e/transformed/lifecycle-viewmodel-ktx-2.9.4/AndroidManifest.xml:2:1-7:12
+MERGED from [savedstate-ktx-1.3.3.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/79762668f578dc7dc113ab7c1e78f7ac/transformed/savedstate-ktx-1.3.3/AndroidManifest.xml:2:1-7:12
+MERGED from [runtime-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/a0f19e87d87aabb376d8f6258dab467f/transformed/runtime-android-1.10.5/AndroidManifest.xml:2:1-7:12
+MERGED from [runtime-saveable-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/1475c6cbba62c416a40aafec7cd88657/transformed/runtime-saveable-android-1.10.5/AndroidManifest.xml:2:1-7:12
+MERGED from [ui-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/369f1de3613ecc172f2bd8863e612cce/transformed/ui-android-1.10.5/AndroidManifest.xml:2:1-7:12
+MERGED from [lifecycle-viewmodel-android-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5b4525b047d75c236ab4be40747ec9bb/transformed/lifecycle-viewmodel-android-2.9.4/AndroidManifest.xml:17:1-22:12
+MERGED from [foundation-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/32f0d2d9105b92bf14f4095827e7ba78/transformed/foundation-android-1.10.5/AndroidManifest.xml:2:1-7:12
+MERGED from [material3-android-1.5.0-alpha08.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/2ac19d7d47115301ec38b3a70f55694c/transformed/material3-android-1.5.0-alpha08/AndroidManifest.xml:17:1-22:12
+MERGED from [graphics-shapes-android-1.1.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/f1dd82deab39c031a734a6c788fbf3b2/transformed/graphics-shapes-android-1.1.0/AndroidManifest.xml:2:1-7:12
+MERGED from [ui-backhandler-android-1.9.3.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/d37686f82a87a3e815629430427bf34f/transformed/ui-backhandler-android-1.9.3/AndroidManifest.xml:2:1-7:12
+MERGED from [core-1.16.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/512664a6a0dfe232294286fc59acd438/transformed/core-1.16.0/AndroidManifest.xml:17:1-30:12
+MERGED from [profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:17:1-55:12
+MERGED from [tracing-1.2.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/a44c60940e799f4b73b35a788ac0dfbb/transformed/tracing-1.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [lifecycle-runtime-ktx-android-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/cabd52e7ef7139487ad701ed1de70e2d/transformed/lifecycle-runtime-ktx-android-2.9.4/AndroidManifest.xml:2:1-7:12
+MERGED from [annotation-experimental-1.4.1.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/d9bb047ae374000a1255bef30c868876/transformed/annotation-experimental-1.4.1/AndroidManifest.xml:2:1-7:12
+MERGED from [autofill-1.0.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/38f1fb262019493b7b8234933b962caa/transformed/autofill-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [customview-poolingcontainer-1.0.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/05c951c65cf59522eaf939eb30727402/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:17:1-23:12
+MERGED from [emoji2-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/aa530d97d78f71501267f10ca2c8509b/transformed/emoji2-1.4.0/AndroidManifest.xml:17:1-35:12
+MERGED from [transition-1.6.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/0b2d4ca68e0b899a195780223ed3cde4/transformed/transition-1.6.0/AndroidManifest.xml:2:1-7:12
+MERGED from [window-1.5.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/980571cf3326a69d19e1f4b920a11b45/transformed/window-1.5.0/AndroidManifest.xml:17:1-31:12
+MERGED from [core-viewtree-1.0.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/881c9b5a93c35fe2ebc1218e9d45e9cb/transformed/core-viewtree-1.0.0/AndroidManifest.xml:2:1-7:12
+MERGED from [animation-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5609875e389056fcda40a05a8e71f2a6/transformed/animation-android-1.10.5/AndroidManifest.xml:2:1-7:12
+MERGED from [foundation-layout-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/e100d361a4aa64a00e4db4d78e454270/transformed/foundation-layout-android-1.10.5/AndroidManifest.xml:2:1-7:12
+MERGED from [runtime-retain-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/f098c5629163fb93f15ae89e9c2e3b1c/transformed/runtime-retain-android-1.10.5/AndroidManifest.xml:2:1-7:12
+MERGED from [ui-text-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/4e4a99775eea717a06f8f9fdbda8beb2/transformed/ui-text-android-1.10.5/AndroidManifest.xml:2:1-7:12
+MERGED from [ui-util-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/aa2848fe787db357e44b8cfb754f703f/transformed/ui-util-android-1.10.5/AndroidManifest.xml:2:1-7:12
+MERGED from [animation-core-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/62100d47a1dba906de10ea51703f58bd/transformed/animation-core-android-1.10.5/AndroidManifest.xml:2:1-7:12
+MERGED from [material-ripple-android-1.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/367f802ff57b8aa4c6d7b90bf954c60c/transformed/material-ripple-android-1.9.4/AndroidManifest.xml:2:1-7:12
+MERGED from [ui-graphics-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/907575a378daf6c33baf2260164db24f/transformed/ui-graphics-android-1.10.5/AndroidManifest.xml:2:1-7:12
+MERGED from [interpolator-1.0.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/4a17c373a43b5ae607106138f3ac975b/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [versionedparcelable-1.1.1.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/ad14c4567c3d25dd70f236d43253ae7f/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [lifecycle-runtime-android-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/91ae0311f3513ba5a94af8e2bdbd960d/transformed/lifecycle-runtime-android-2.9.4/AndroidManifest.xml:17:1-22:12
+MERGED from [lifecycle-viewmodel-savedstate-android-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/24fd687b9d70ffdfcc08798234e4c14f/transformed/lifecycle-viewmodel-savedstate-android-2.9.4/AndroidManifest.xml:17:1-22:12
+MERGED from [startup-runtime-1.1.1.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/0bdc44f6ce054c9e5523a0ea9c9ed5e9/transformed/startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
+MERGED from [savedstate-android-1.3.3.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/8c9efa23d0d0b89036e339144339a019/transformed/savedstate-android-1.3.3/AndroidManifest.xml:17:1-22:12
+MERGED from [runtime-annotation-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/a2e17d34900519d715dd2ab18eebe870/transformed/runtime-annotation-android-1.10.5/AndroidManifest.xml:2:1-7:12
+MERGED from [lifecycle-runtime-compose-android-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/4585abab556874bc5895c238e02b68aa/transformed/lifecycle-runtime-compose-android-2.9.4/AndroidManifest.xml:2:1-7:12
+MERGED from [savedstate-compose-android-1.3.3.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/599e9ce24ce81323a9096a4602bb0d73/transformed/savedstate-compose-android-1.3.3/AndroidManifest.xml:2:1-7:12
+MERGED from [ui-geometry-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/3c8a09a0feb2f3ca7fbf0c4b8a580c48/transformed/ui-geometry-android-1.10.5/AndroidManifest.xml:2:1-7:12
+MERGED from [ui-unit-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/085fe8dd25f0e9dd8f8fd427dd41b490/transformed/ui-unit-android-1.10.5/AndroidManifest.xml:2:1-7:12
+MERGED from [lifecycle-process-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/100964860691972a9d2283746fcd0e73/transformed/lifecycle-process-2.9.4/AndroidManifest.xml:17:1-35:12
+MERGED from [dynamicanimation-1.0.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/1b364811ea8bf8a302ecea78d42a5d58/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [graphics-path-1.0.1.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/e2dbf1b45ef05e4ee250dd2a27900705/transformed/graphics-path-1.0.1/AndroidManifest.xml:2:1-7:12
+MERGED from [core-runtime-2.2.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/6f1f19daf3da504ee3ff13b1ecf766c8/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [lifecycle-livedata-core-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/f6a96476f2121a90b19a7ea3138efe4d/transformed/lifecycle-livedata-core-2.9.4/AndroidManifest.xml:17:1-22:12
+MERGED from [legacy-support-core-utils-1.0.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/27ed3fe785f0624ee4cb6c48fbd5887f/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [window-core-android-1.5.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/f37c3358048e16eb330869e629829396/transformed/window-core-android-1.5.0/AndroidManifest.xml:2:1-7:12
+MERGED from [documentfile-1.0.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/40fdbc0c70a58ec715f236a7b29ce036/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [loader-1.0.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/dd480a20899cf3341427227c44b84a56/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [localbroadcastmanager-1.0.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/0ebff6f615d00d1ac6f52f8b76651358/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [print-1.0.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/6d8c2a20a58168f5016946b28dff6fa9/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [lifecycle-livedata-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/3e67c0ce14a2dcf7a68383d4a457cc94/transformed/lifecycle-livedata-2.9.4/AndroidManifest.xml:17:1-22:12
+MERGED from [lifecycle-livedata-core-ktx-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/b6af73e1cf1fb681b5f483e4a391b1d1/transformed/lifecycle-livedata-core-ktx-2.9.4/AndroidManifest.xml:2:1-7:12
+	package
+		INJECTED from /Users/saicharan/Developer/CrossPlatform/binge-diary/android-app/src/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/saicharan/Developer/CrossPlatform/binge-diary/android-app/src/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/saicharan/Developer/CrossPlatform/binge-diary/android-app/src/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/saicharan/Developer/CrossPlatform/binge-diary/android-app/src/AndroidManifest.xml:1:11-69
+application
+ADDED from /Users/saicharan/Developer/CrossPlatform/binge-diary/android-app/src/AndroidManifest.xml:2:5-10:19
+INJECTED from /Users/saicharan/Developer/CrossPlatform/binge-diary/android-app/src/AndroidManifest.xml:2:5-10:19
+MERGED from [core-1.16.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/512664a6a0dfe232294286fc59acd438/transformed/core-1.16.0/AndroidManifest.xml:28:5-89
+MERGED from [core-1.16.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/512664a6a0dfe232294286fc59acd438/transformed/core-1.16.0/AndroidManifest.xml:28:5-89
+MERGED from [profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:23:5-53:19
+MERGED from [profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:23:5-53:19
+MERGED from [emoji2-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/aa530d97d78f71501267f10ca2c8509b/transformed/emoji2-1.4.0/AndroidManifest.xml:23:5-33:19
+MERGED from [emoji2-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/aa530d97d78f71501267f10ca2c8509b/transformed/emoji2-1.4.0/AndroidManifest.xml:23:5-33:19
+MERGED from [window-1.5.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/980571cf3326a69d19e1f4b920a11b45/transformed/window-1.5.0/AndroidManifest.xml:22:5-29:19
+MERGED from [window-1.5.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/980571cf3326a69d19e1f4b920a11b45/transformed/window-1.5.0/AndroidManifest.xml:22:5-29:19
+MERGED from [versionedparcelable-1.1.1.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/ad14c4567c3d25dd70f236d43253ae7f/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [versionedparcelable-1.1.1.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/ad14c4567c3d25dd70f236d43253ae7f/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [startup-runtime-1.1.1.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/0bdc44f6ce054c9e5523a0ea9c9ed5e9/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [startup-runtime-1.1.1.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/0bdc44f6ce054c9e5523a0ea9c9ed5e9/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [lifecycle-process-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/100964860691972a9d2283746fcd0e73/transformed/lifecycle-process-2.9.4/AndroidManifest.xml:23:5-33:19
+MERGED from [lifecycle-process-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/100964860691972a9d2283746fcd0e73/transformed/lifecycle-process-2.9.4/AndroidManifest.xml:23:5-33:19
+	android:extractNativeLibs
+		INJECTED from /Users/saicharan/Developer/CrossPlatform/binge-diary/android-app/src/AndroidManifest.xml
+	android:appComponentFactory
+		ADDED from [core-1.16.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/512664a6a0dfe232294286fc59acd438/transformed/core-1.16.0/AndroidManifest.xml:28:18-86
+activity#hello.world.MainActivity
+ADDED from /Users/saicharan/Developer/CrossPlatform/binge-diary/android-app/src/AndroidManifest.xml:3:9-9:20
+	android:exported
+		ADDED from /Users/saicharan/Developer/CrossPlatform/binge-diary/android-app/src/AndroidManifest.xml:4:19-42
+	android:name
+		ADDED from /Users/saicharan/Developer/CrossPlatform/binge-diary/android-app/src/AndroidManifest.xml:3:19-58
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/saicharan/Developer/CrossPlatform/binge-diary/android-app/src/AndroidManifest.xml:5:13-8:29
+action#android.intent.action.MAIN
+ADDED from /Users/saicharan/Developer/CrossPlatform/binge-diary/android-app/src/AndroidManifest.xml:6:17-69
+	android:name
+		ADDED from /Users/saicharan/Developer/CrossPlatform/binge-diary/android-app/src/AndroidManifest.xml:6:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/saicharan/Developer/CrossPlatform/binge-diary/android-app/src/AndroidManifest.xml:7:17-77
+	android:name
+		ADDED from /Users/saicharan/Developer/CrossPlatform/binge-diary/android-app/src/AndroidManifest.xml:7:27-74
+uses-sdk
+INJECTED from /Users/saicharan/Developer/CrossPlatform/binge-diary/android-app/src/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/saicharan/Developer/CrossPlatform/binge-diary/android-app/src/AndroidManifest.xml
+INJECTED from /Users/saicharan/Developer/CrossPlatform/binge-diary/android-app/src/AndroidManifest.xml
+MERGED from [activity-compose-1.8.2.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/1ebb17be3ac23fbe86253c2da83680f7/transformed/activity-compose-1.8.2/AndroidManifest.xml:5:5-44
+MERGED from [activity-compose-1.8.2.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/1ebb17be3ac23fbe86253c2da83680f7/transformed/activity-compose-1.8.2/AndroidManifest.xml:5:5-44
+MERGED from [activity-ktx-1.8.2.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/e7827544a2bda7c9649a3bc9e94fe894/transformed/activity-ktx-1.8.2/AndroidManifest.xml:5:5-44
+MERGED from [activity-ktx-1.8.2.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/e7827544a2bda7c9649a3bc9e94fe894/transformed/activity-ktx-1.8.2/AndroidManifest.xml:5:5-44
+MERGED from [activity-1.8.2.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/a22807043e932047358dad63f7113ab5/transformed/activity-1.8.2/AndroidManifest.xml:20:5-44
+MERGED from [activity-1.8.2.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/a22807043e932047358dad63f7113ab5/transformed/activity-1.8.2/AndroidManifest.xml:20:5-44
+MERGED from [core-ktx-1.16.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/99a33480a2d78589dc997c8474633344/transformed/core-ktx-1.16.0/AndroidManifest.xml:5:5-44
+MERGED from [core-ktx-1.16.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/99a33480a2d78589dc997c8474633344/transformed/core-ktx-1.16.0/AndroidManifest.xml:5:5-44
+MERGED from [lifecycle-viewmodel-ktx-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/2cf59a9899fd5bae2a67113cfba3127e/transformed/lifecycle-viewmodel-ktx-2.9.4/AndroidManifest.xml:5:5-44
+MERGED from [lifecycle-viewmodel-ktx-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/2cf59a9899fd5bae2a67113cfba3127e/transformed/lifecycle-viewmodel-ktx-2.9.4/AndroidManifest.xml:5:5-44
+MERGED from [savedstate-ktx-1.3.3.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/79762668f578dc7dc113ab7c1e78f7ac/transformed/savedstate-ktx-1.3.3/AndroidManifest.xml:5:5-44
+MERGED from [savedstate-ktx-1.3.3.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/79762668f578dc7dc113ab7c1e78f7ac/transformed/savedstate-ktx-1.3.3/AndroidManifest.xml:5:5-44
+MERGED from [runtime-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/a0f19e87d87aabb376d8f6258dab467f/transformed/runtime-android-1.10.5/AndroidManifest.xml:5:5-44
+MERGED from [runtime-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/a0f19e87d87aabb376d8f6258dab467f/transformed/runtime-android-1.10.5/AndroidManifest.xml:5:5-44
+MERGED from [runtime-saveable-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/1475c6cbba62c416a40aafec7cd88657/transformed/runtime-saveable-android-1.10.5/AndroidManifest.xml:5:5-44
+MERGED from [runtime-saveable-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/1475c6cbba62c416a40aafec7cd88657/transformed/runtime-saveable-android-1.10.5/AndroidManifest.xml:5:5-44
+MERGED from [ui-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/369f1de3613ecc172f2bd8863e612cce/transformed/ui-android-1.10.5/AndroidManifest.xml:5:5-44
+MERGED from [ui-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/369f1de3613ecc172f2bd8863e612cce/transformed/ui-android-1.10.5/AndroidManifest.xml:5:5-44
+MERGED from [lifecycle-viewmodel-android-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5b4525b047d75c236ab4be40747ec9bb/transformed/lifecycle-viewmodel-android-2.9.4/AndroidManifest.xml:20:5-44
+MERGED from [lifecycle-viewmodel-android-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5b4525b047d75c236ab4be40747ec9bb/transformed/lifecycle-viewmodel-android-2.9.4/AndroidManifest.xml:20:5-44
+MERGED from [foundation-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/32f0d2d9105b92bf14f4095827e7ba78/transformed/foundation-android-1.10.5/AndroidManifest.xml:5:5-44
+MERGED from [foundation-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/32f0d2d9105b92bf14f4095827e7ba78/transformed/foundation-android-1.10.5/AndroidManifest.xml:5:5-44
+MERGED from [material3-android-1.5.0-alpha08.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/2ac19d7d47115301ec38b3a70f55694c/transformed/material3-android-1.5.0-alpha08/AndroidManifest.xml:20:5-44
+MERGED from [material3-android-1.5.0-alpha08.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/2ac19d7d47115301ec38b3a70f55694c/transformed/material3-android-1.5.0-alpha08/AndroidManifest.xml:20:5-44
+MERGED from [graphics-shapes-android-1.1.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/f1dd82deab39c031a734a6c788fbf3b2/transformed/graphics-shapes-android-1.1.0/AndroidManifest.xml:5:5-44
+MERGED from [graphics-shapes-android-1.1.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/f1dd82deab39c031a734a6c788fbf3b2/transformed/graphics-shapes-android-1.1.0/AndroidManifest.xml:5:5-44
+MERGED from [ui-backhandler-android-1.9.3.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/d37686f82a87a3e815629430427bf34f/transformed/ui-backhandler-android-1.9.3/AndroidManifest.xml:5:5-44
+MERGED from [ui-backhandler-android-1.9.3.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/d37686f82a87a3e815629430427bf34f/transformed/ui-backhandler-android-1.9.3/AndroidManifest.xml:5:5-44
+MERGED from [core-1.16.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/512664a6a0dfe232294286fc59acd438/transformed/core-1.16.0/AndroidManifest.xml:20:5-44
+MERGED from [core-1.16.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/512664a6a0dfe232294286fc59acd438/transformed/core-1.16.0/AndroidManifest.xml:20:5-44
+MERGED from [profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:21:5-44
+MERGED from [profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:21:5-44
+MERGED from [tracing-1.2.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/a44c60940e799f4b73b35a788ac0dfbb/transformed/tracing-1.2.0/AndroidManifest.xml:20:5-44
+MERGED from [tracing-1.2.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/a44c60940e799f4b73b35a788ac0dfbb/transformed/tracing-1.2.0/AndroidManifest.xml:20:5-44
+MERGED from [lifecycle-runtime-ktx-android-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/cabd52e7ef7139487ad701ed1de70e2d/transformed/lifecycle-runtime-ktx-android-2.9.4/AndroidManifest.xml:5:5-44
+MERGED from [lifecycle-runtime-ktx-android-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/cabd52e7ef7139487ad701ed1de70e2d/transformed/lifecycle-runtime-ktx-android-2.9.4/AndroidManifest.xml:5:5-44
+MERGED from [annotation-experimental-1.4.1.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/d9bb047ae374000a1255bef30c868876/transformed/annotation-experimental-1.4.1/AndroidManifest.xml:5:5-44
+MERGED from [annotation-experimental-1.4.1.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/d9bb047ae374000a1255bef30c868876/transformed/annotation-experimental-1.4.1/AndroidManifest.xml:5:5-44
+MERGED from [autofill-1.0.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/38f1fb262019493b7b8234933b962caa/transformed/autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [autofill-1.0.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/38f1fb262019493b7b8234933b962caa/transformed/autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [customview-poolingcontainer-1.0.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/05c951c65cf59522eaf939eb30727402/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
+MERGED from [customview-poolingcontainer-1.0.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/05c951c65cf59522eaf939eb30727402/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
+MERGED from [emoji2-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/aa530d97d78f71501267f10ca2c8509b/transformed/emoji2-1.4.0/AndroidManifest.xml:21:5-44
+MERGED from [emoji2-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/aa530d97d78f71501267f10ca2c8509b/transformed/emoji2-1.4.0/AndroidManifest.xml:21:5-44
+MERGED from [transition-1.6.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/0b2d4ca68e0b899a195780223ed3cde4/transformed/transition-1.6.0/AndroidManifest.xml:5:5-44
+MERGED from [transition-1.6.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/0b2d4ca68e0b899a195780223ed3cde4/transformed/transition-1.6.0/AndroidManifest.xml:5:5-44
+MERGED from [window-1.5.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/980571cf3326a69d19e1f4b920a11b45/transformed/window-1.5.0/AndroidManifest.xml:20:5-44
+MERGED from [window-1.5.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/980571cf3326a69d19e1f4b920a11b45/transformed/window-1.5.0/AndroidManifest.xml:20:5-44
+MERGED from [core-viewtree-1.0.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/881c9b5a93c35fe2ebc1218e9d45e9cb/transformed/core-viewtree-1.0.0/AndroidManifest.xml:5:5-44
+MERGED from [core-viewtree-1.0.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/881c9b5a93c35fe2ebc1218e9d45e9cb/transformed/core-viewtree-1.0.0/AndroidManifest.xml:5:5-44
+MERGED from [animation-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5609875e389056fcda40a05a8e71f2a6/transformed/animation-android-1.10.5/AndroidManifest.xml:5:5-44
+MERGED from [animation-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5609875e389056fcda40a05a8e71f2a6/transformed/animation-android-1.10.5/AndroidManifest.xml:5:5-44
+MERGED from [foundation-layout-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/e100d361a4aa64a00e4db4d78e454270/transformed/foundation-layout-android-1.10.5/AndroidManifest.xml:5:5-44
+MERGED from [foundation-layout-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/e100d361a4aa64a00e4db4d78e454270/transformed/foundation-layout-android-1.10.5/AndroidManifest.xml:5:5-44
+MERGED from [runtime-retain-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/f098c5629163fb93f15ae89e9c2e3b1c/transformed/runtime-retain-android-1.10.5/AndroidManifest.xml:5:5-44
+MERGED from [runtime-retain-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/f098c5629163fb93f15ae89e9c2e3b1c/transformed/runtime-retain-android-1.10.5/AndroidManifest.xml:5:5-44
+MERGED from [ui-text-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/4e4a99775eea717a06f8f9fdbda8beb2/transformed/ui-text-android-1.10.5/AndroidManifest.xml:5:5-44
+MERGED from [ui-text-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/4e4a99775eea717a06f8f9fdbda8beb2/transformed/ui-text-android-1.10.5/AndroidManifest.xml:5:5-44
+MERGED from [ui-util-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/aa2848fe787db357e44b8cfb754f703f/transformed/ui-util-android-1.10.5/AndroidManifest.xml:5:5-44
+MERGED from [ui-util-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/aa2848fe787db357e44b8cfb754f703f/transformed/ui-util-android-1.10.5/AndroidManifest.xml:5:5-44
+MERGED from [animation-core-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/62100d47a1dba906de10ea51703f58bd/transformed/animation-core-android-1.10.5/AndroidManifest.xml:5:5-44
+MERGED from [animation-core-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/62100d47a1dba906de10ea51703f58bd/transformed/animation-core-android-1.10.5/AndroidManifest.xml:5:5-44
+MERGED from [material-ripple-android-1.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/367f802ff57b8aa4c6d7b90bf954c60c/transformed/material-ripple-android-1.9.4/AndroidManifest.xml:5:5-44
+MERGED from [material-ripple-android-1.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/367f802ff57b8aa4c6d7b90bf954c60c/transformed/material-ripple-android-1.9.4/AndroidManifest.xml:5:5-44
+MERGED from [ui-graphics-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/907575a378daf6c33baf2260164db24f/transformed/ui-graphics-android-1.10.5/AndroidManifest.xml:5:5-44
+MERGED from [ui-graphics-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/907575a378daf6c33baf2260164db24f/transformed/ui-graphics-android-1.10.5/AndroidManifest.xml:5:5-44
+MERGED from [interpolator-1.0.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/4a17c373a43b5ae607106138f3ac975b/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [interpolator-1.0.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/4a17c373a43b5ae607106138f3ac975b/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [versionedparcelable-1.1.1.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/ad14c4567c3d25dd70f236d43253ae7f/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [versionedparcelable-1.1.1.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/ad14c4567c3d25dd70f236d43253ae7f/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [lifecycle-runtime-android-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/91ae0311f3513ba5a94af8e2bdbd960d/transformed/lifecycle-runtime-android-2.9.4/AndroidManifest.xml:20:5-44
+MERGED from [lifecycle-runtime-android-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/91ae0311f3513ba5a94af8e2bdbd960d/transformed/lifecycle-runtime-android-2.9.4/AndroidManifest.xml:20:5-44
+MERGED from [lifecycle-viewmodel-savedstate-android-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/24fd687b9d70ffdfcc08798234e4c14f/transformed/lifecycle-viewmodel-savedstate-android-2.9.4/AndroidManifest.xml:20:5-44
+MERGED from [lifecycle-viewmodel-savedstate-android-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/24fd687b9d70ffdfcc08798234e4c14f/transformed/lifecycle-viewmodel-savedstate-android-2.9.4/AndroidManifest.xml:20:5-44
+MERGED from [startup-runtime-1.1.1.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/0bdc44f6ce054c9e5523a0ea9c9ed5e9/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [startup-runtime-1.1.1.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/0bdc44f6ce054c9e5523a0ea9c9ed5e9/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [savedstate-android-1.3.3.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/8c9efa23d0d0b89036e339144339a019/transformed/savedstate-android-1.3.3/AndroidManifest.xml:20:5-44
+MERGED from [savedstate-android-1.3.3.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/8c9efa23d0d0b89036e339144339a019/transformed/savedstate-android-1.3.3/AndroidManifest.xml:20:5-44
+MERGED from [runtime-annotation-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/a2e17d34900519d715dd2ab18eebe870/transformed/runtime-annotation-android-1.10.5/AndroidManifest.xml:5:5-44
+MERGED from [runtime-annotation-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/a2e17d34900519d715dd2ab18eebe870/transformed/runtime-annotation-android-1.10.5/AndroidManifest.xml:5:5-44
+MERGED from [lifecycle-runtime-compose-android-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/4585abab556874bc5895c238e02b68aa/transformed/lifecycle-runtime-compose-android-2.9.4/AndroidManifest.xml:5:5-44
+MERGED from [lifecycle-runtime-compose-android-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/4585abab556874bc5895c238e02b68aa/transformed/lifecycle-runtime-compose-android-2.9.4/AndroidManifest.xml:5:5-44
+MERGED from [savedstate-compose-android-1.3.3.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/599e9ce24ce81323a9096a4602bb0d73/transformed/savedstate-compose-android-1.3.3/AndroidManifest.xml:5:5-44
+MERGED from [savedstate-compose-android-1.3.3.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/599e9ce24ce81323a9096a4602bb0d73/transformed/savedstate-compose-android-1.3.3/AndroidManifest.xml:5:5-44
+MERGED from [ui-geometry-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/3c8a09a0feb2f3ca7fbf0c4b8a580c48/transformed/ui-geometry-android-1.10.5/AndroidManifest.xml:5:5-44
+MERGED from [ui-geometry-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/3c8a09a0feb2f3ca7fbf0c4b8a580c48/transformed/ui-geometry-android-1.10.5/AndroidManifest.xml:5:5-44
+MERGED from [ui-unit-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/085fe8dd25f0e9dd8f8fd427dd41b490/transformed/ui-unit-android-1.10.5/AndroidManifest.xml:5:5-44
+MERGED from [ui-unit-android-1.10.5.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/085fe8dd25f0e9dd8f8fd427dd41b490/transformed/ui-unit-android-1.10.5/AndroidManifest.xml:5:5-44
+MERGED from [lifecycle-process-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/100964860691972a9d2283746fcd0e73/transformed/lifecycle-process-2.9.4/AndroidManifest.xml:21:5-44
+MERGED from [lifecycle-process-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/100964860691972a9d2283746fcd0e73/transformed/lifecycle-process-2.9.4/AndroidManifest.xml:21:5-44
+MERGED from [dynamicanimation-1.0.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/1b364811ea8bf8a302ecea78d42a5d58/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [dynamicanimation-1.0.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/1b364811ea8bf8a302ecea78d42a5d58/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [graphics-path-1.0.1.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/e2dbf1b45ef05e4ee250dd2a27900705/transformed/graphics-path-1.0.1/AndroidManifest.xml:5:5-44
+MERGED from [graphics-path-1.0.1.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/e2dbf1b45ef05e4ee250dd2a27900705/transformed/graphics-path-1.0.1/AndroidManifest.xml:5:5-44
+MERGED from [core-runtime-2.2.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/6f1f19daf3da504ee3ff13b1ecf766c8/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [core-runtime-2.2.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/6f1f19daf3da504ee3ff13b1ecf766c8/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [lifecycle-livedata-core-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/f6a96476f2121a90b19a7ea3138efe4d/transformed/lifecycle-livedata-core-2.9.4/AndroidManifest.xml:20:5-44
+MERGED from [lifecycle-livedata-core-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/f6a96476f2121a90b19a7ea3138efe4d/transformed/lifecycle-livedata-core-2.9.4/AndroidManifest.xml:20:5-44
+MERGED from [legacy-support-core-utils-1.0.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/27ed3fe785f0624ee4cb6c48fbd5887f/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [legacy-support-core-utils-1.0.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/27ed3fe785f0624ee4cb6c48fbd5887f/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [window-core-android-1.5.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/f37c3358048e16eb330869e629829396/transformed/window-core-android-1.5.0/AndroidManifest.xml:5:5-44
+MERGED from [window-core-android-1.5.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/f37c3358048e16eb330869e629829396/transformed/window-core-android-1.5.0/AndroidManifest.xml:5:5-44
+MERGED from [documentfile-1.0.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/40fdbc0c70a58ec715f236a7b29ce036/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [documentfile-1.0.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/40fdbc0c70a58ec715f236a7b29ce036/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [loader-1.0.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/dd480a20899cf3341427227c44b84a56/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [loader-1.0.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/dd480a20899cf3341427227c44b84a56/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [localbroadcastmanager-1.0.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/0ebff6f615d00d1ac6f52f8b76651358/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [localbroadcastmanager-1.0.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/0ebff6f615d00d1ac6f52f8b76651358/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [print-1.0.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/6d8c2a20a58168f5016946b28dff6fa9/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [print-1.0.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/6d8c2a20a58168f5016946b28dff6fa9/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [lifecycle-livedata-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/3e67c0ce14a2dcf7a68383d4a457cc94/transformed/lifecycle-livedata-2.9.4/AndroidManifest.xml:20:5-44
+MERGED from [lifecycle-livedata-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/3e67c0ce14a2dcf7a68383d4a457cc94/transformed/lifecycle-livedata-2.9.4/AndroidManifest.xml:20:5-44
+MERGED from [lifecycle-livedata-core-ktx-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/b6af73e1cf1fb681b5f483e4a391b1d1/transformed/lifecycle-livedata-core-ktx-2.9.4/AndroidManifest.xml:5:5-44
+MERGED from [lifecycle-livedata-core-ktx-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/b6af73e1cf1fb681b5f483e4a391b1d1/transformed/lifecycle-livedata-core-ktx-2.9.4/AndroidManifest.xml:5:5-44
+	android:targetSdkVersion
+		INJECTED from /Users/saicharan/Developer/CrossPlatform/binge-diary/android-app/src/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/saicharan/Developer/CrossPlatform/binge-diary/android-app/src/AndroidManifest.xml
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+IMPLIED from /Users/saicharan/Developer/CrossPlatform/binge-diary/android-app/src/AndroidManifest.xml:1:1-11:12 reason: org.jetbrains.amper.internal.p936334787 has a targetSdkVersion < 4
+uses-permission#android.permission.READ_PHONE_STATE
+IMPLIED from /Users/saicharan/Developer/CrossPlatform/binge-diary/android-app/src/AndroidManifest.xml:1:1-11:12 reason: org.jetbrains.amper.internal.p936334787 has a targetSdkVersion < 4
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+IMPLIED from /Users/saicharan/Developer/CrossPlatform/binge-diary/android-app/src/AndroidManifest.xml:1:1-11:12 reason: org.jetbrains.amper.internal.p936334787 requested WRITE_EXTERNAL_STORAGE
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [core-1.16.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/512664a6a0dfe232294286fc59acd438/transformed/core-1.16.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [core-1.16.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/512664a6a0dfe232294286fc59acd438/transformed/core-1.16.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [core-1.16.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/512664a6a0dfe232294286fc59acd438/transformed/core-1.16.0/AndroidManifest.xml:23:9-81
+permission#org.example.namespace.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [core-1.16.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/512664a6a0dfe232294286fc59acd438/transformed/core-1.16.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [core-1.16.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/512664a6a0dfe232294286fc59acd438/transformed/core-1.16.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [core-1.16.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/512664a6a0dfe232294286fc59acd438/transformed/core-1.16.0/AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [core-1.16.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/512664a6a0dfe232294286fc59acd438/transformed/core-1.16.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [core-1.16.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/512664a6a0dfe232294286fc59acd438/transformed/core-1.16.0/AndroidManifest.xml:26:22-94
+uses-permission#org.example.namespace.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [core-1.16.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/512664a6a0dfe232294286fc59acd438/transformed/core-1.16.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [core-1.16.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/512664a6a0dfe232294286fc59acd438/transformed/core-1.16.0/AndroidManifest.xml:26:22-94
+provider#androidx.startup.InitializationProvider
+ADDED from [profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:24:9-32:20
+MERGED from [emoji2-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/aa530d97d78f71501267f10ca2c8509b/transformed/emoji2-1.4.0/AndroidManifest.xml:24:9-32:20
+MERGED from [emoji2-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/aa530d97d78f71501267f10ca2c8509b/transformed/emoji2-1.4.0/AndroidManifest.xml:24:9-32:20
+MERGED from [startup-runtime-1.1.1.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/0bdc44f6ce054c9e5523a0ea9c9ed5e9/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+MERGED from [startup-runtime-1.1.1.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/0bdc44f6ce054c9e5523a0ea9c9ed5e9/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+MERGED from [lifecycle-process-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/100964860691972a9d2283746fcd0e73/transformed/lifecycle-process-2.9.4/AndroidManifest.xml:24:9-32:20
+MERGED from [lifecycle-process-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/100964860691972a9d2283746fcd0e73/transformed/lifecycle-process-2.9.4/AndroidManifest.xml:24:9-32:20
+	tools:node
+		ADDED from [profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:25:13-67
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:30:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:34:9-52:20
+	android:enabled
+		ADDED from [profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:38:13-36
+	android:permission
+		ADDED from [profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:39:13-57
+	android:directBootAware
+		ADDED from [profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:36:13-44
+	android:name
+		ADDED from [profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:35:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:40:13-42:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:17-91
+	android:name
+		ADDED from [profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:25-88
+intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
+ADDED from [profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:43:13-45:29
+action#androidx.profileinstaller.action.SKIP_FILE
+ADDED from [profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:17-85
+	android:name
+		ADDED from [profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:25-82
+intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:46:13-48:29
+action#androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:17-88
+	android:name
+		ADDED from [profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:25-85
+intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:49:13-51:29
+action#androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:17-95
+	android:name
+		ADDED from [profileinstaller-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/5dd08f0ea5f2600291467130ebb4cefb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:25-92
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [emoji2-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/aa530d97d78f71501267f10ca2c8509b/transformed/emoji2-1.4.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [emoji2-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/aa530d97d78f71501267f10ca2c8509b/transformed/emoji2-1.4.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [emoji2-1.4.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/aa530d97d78f71501267f10ca2c8509b/transformed/emoji2-1.4.0/AndroidManifest.xml:30:17-75
+uses-library#androidx.window.extensions
+ADDED from [window-1.5.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/980571cf3326a69d19e1f4b920a11b45/transformed/window-1.5.0/AndroidManifest.xml:23:9-25:40
+	android:required
+		ADDED from [window-1.5.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/980571cf3326a69d19e1f4b920a11b45/transformed/window-1.5.0/AndroidManifest.xml:25:13-37
+	android:name
+		ADDED from [window-1.5.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/980571cf3326a69d19e1f4b920a11b45/transformed/window-1.5.0/AndroidManifest.xml:24:13-54
+uses-library#androidx.window.sidecar
+ADDED from [window-1.5.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/980571cf3326a69d19e1f4b920a11b45/transformed/window-1.5.0/AndroidManifest.xml:26:9-28:40
+	android:required
+		ADDED from [window-1.5.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/980571cf3326a69d19e1f4b920a11b45/transformed/window-1.5.0/AndroidManifest.xml:28:13-37
+	android:name
+		ADDED from [window-1.5.0.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/980571cf3326a69d19e1f4b920a11b45/transformed/window-1.5.0/AndroidManifest.xml:27:13-51
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [lifecycle-process-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/100964860691972a9d2283746fcd0e73/transformed/lifecycle-process-2.9.4/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [lifecycle-process-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/100964860691972a9d2283746fcd0e73/transformed/lifecycle-process-2.9.4/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [lifecycle-process-2.9.4.aar] /Users/saicharan/.gradle/caches/8.14.3/transforms/100964860691972a9d2283746fcd0e73/transformed/lifecycle-process-2.9.4/AndroidManifest.xml:30:17-78

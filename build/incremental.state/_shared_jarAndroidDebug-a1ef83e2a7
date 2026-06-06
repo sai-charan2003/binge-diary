@@ -1,0 +1,30 @@
+{
+    "codeVersion": "0.11.0",
+    "inputValues": {
+        "inputDirsDestPaths": "[., ., .]",
+        "jarConfig": "{}",
+        "outputJarPath": "/Users/saicharan/Developer/CrossPlatform/binge-diary/build/tasks/_shared_jarAndroidDebug/shared-jvm.jar"
+    },
+    "inputFiles": [
+        "/Users/saicharan/Developer/CrossPlatform/binge-diary/build/artifacts/CompiledJvmArtifact/sharedandroiddebug/java-output",
+        "/Users/saicharan/Developer/CrossPlatform/binge-diary/build/artifacts/CompiledJvmArtifact/sharedandroiddebug/kotlin-output",
+        "/Users/saicharan/Developer/CrossPlatform/binge-diary/build/artifacts/CompiledJvmArtifact/sharedandroiddebug/resources-output"
+    ],
+    "inputFilesState": {
+        "/Users/saicharan/Developer/CrossPlatform/binge-diary/build/artifacts/CompiledJvmArtifact/sharedandroiddebug/java-output": "EMPTY DIR",
+        "/Users/saicharan/Developer/CrossPlatform/binge-diary/build/artifacts/CompiledJvmArtifact/sharedandroiddebug/kotlin-output/ComposableSingletons$ScreenKt.class": "size 10158 mtime 2026-06-06T18:39:33.442888476Z",
+        "/Users/saicharan/Developer/CrossPlatform/binge-diary/build/artifacts/CompiledJvmArtifact/sharedandroiddebug/kotlin-output/META-INF/main.kotlin_module": "size 47 mtime 2026-06-06T18:39:33.443276603Z",
+        "/Users/saicharan/Developer/CrossPlatform/binge-diary/build/artifacts/CompiledJvmArtifact/sharedandroiddebug/kotlin-output/ScreenKt.class": "size 3018 mtime 2026-06-06T18:39:33.443019185Z",
+        "/Users/saicharan/Developer/CrossPlatform/binge-diary/build/artifacts/CompiledJvmArtifact/sharedandroiddebug/kotlin-output/WorldKt.class": "size 462 mtime 2026-06-06T18:39:33.442586016Z",
+        "/Users/saicharan/Developer/CrossPlatform/binge-diary/build/artifacts/CompiledJvmArtifact/sharedandroiddebug/resources-output": "EMPTY DIR"
+    },
+    "outputValues": {},
+    "outputFiles": [
+        "/Users/saicharan/Developer/CrossPlatform/binge-diary/build/tasks/_shared_jarAndroidDebug/shared-jvm.jar"
+    ],
+    "outputFilesState": {
+        "/Users/saicharan/Developer/CrossPlatform/binge-diary/build/tasks/_shared_jarAndroidDebug/shared-jvm.jar": "size 6638 mtime 2026-06-06T18:39:33.471510555Z mode 420 owner saicharan group staff"
+    },
+    "excludedOutputFiles": [],
+    "dynamicInputs": {}
+}
