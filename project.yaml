@@ -1,5 +1,9 @@
 modules:
   - android-app
+  - build-config
   - ios-app
   - jvm-app
   - shared
+
+plugins:
+  - ./build-config

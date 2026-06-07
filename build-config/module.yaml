@@ -1,0 +1,8 @@
+product: jvm/amper-plugin
+
+
+dependencies:
+  - com.squareup:kotlinpoet:2.2.0
+
+pluginInfo:
+  settingsClass: com.bingediary.config.Settings

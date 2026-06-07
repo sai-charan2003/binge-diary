@@ -1,0 +1,11 @@
+tasks:
+  generate:
+    action: !com.bingediary.config.generateSources
+      propertiesFile: ${module.rootDir}/${pluginSettings.propertiesFileName}-${pluginSettings.buildType}.properties
+      additionalConfig: ${pluginSettings.additionalConfig}
+      generatedSourceDir: ${taskOutputDir}
+
+generated:
+  sources:
+    - language: kotlin
+      directory: ${tasks.generate.action.generatedSourceDir}

@@ -1,1 +1,4 @@
 /.idea/
+shared/config-debug.properties
+shared/config-release.properties
+/build/
