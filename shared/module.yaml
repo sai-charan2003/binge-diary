@@ -8,6 +8,21 @@ dependencies:
   - bom: io.github.jan-tennert.supabase:bom:3.6.0
   - io.github.jan-tennert.supabase:postgrest-kt
   - io.github.jan-tennert.supabase:auth-kt
+  - io.github.jan-tennert.supabase:compose-auth
+  - bom: io.insert-koin:koin-bom:4.2.1
+  - io.insert-koin:koin-core
+  - io.insert-koin:koin-compose
+  - io.insert-koin:koin-compose-viewmodel
+  - io.insert-koin:koin-core-viewmodel
+  - io.insert-koin:koin-annotations
+  - org.jetbrains.androidx.navigation3:navigation3-ui:1.0.0-alpha05
+  - org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-navigation3:2.10.0-alpha05
+  - io.github.mirzemehdi:kmpauth-google:2.5.0-alpha01
+  - org.jetbrains.compose.material:material-icons-core:1.7.3
+
+
+dependencies@android:
+  - io.insert-koin:koin-android
 
 settings:
   compose:
@@ -15,6 +30,10 @@ settings:
     version: 1.11.1
   kotlin:
     serialization: json
+    version: 2.3.21
+    compilerPlugins:
+      - id: io.insert-koin.compiler.plugin
+        dependency: io.insert-koin:koin-compiler-plugin:1.0.0
   ktor: enabled
 
 
@@ -23,5 +42,6 @@ plugins:
     enabled: true
     propertiesFileName: config
     buildType: "debug"
+
 
 

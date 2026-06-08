@@ -1,3 +1,5 @@
+package com.charan.bingediary
+
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 

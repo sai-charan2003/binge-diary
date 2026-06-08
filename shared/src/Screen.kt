@@ -1,22 +1,21 @@
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.text.BasicText
+package com.charan.bingediary
+
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import com.bingediary.config.BuildConfig
+import androidx.compose.runtime.Composable
+import com.charan.bingediary.config.BuildConfig
+import com.mmk.kmpauth.google.GoogleAuthCredentials
+import com.mmk.kmpauth.google.GoogleAuthProvider
+import com.charan.bingediary.di.App
+import org.koin.compose.KoinApplication
+import org.koin.plugin.module.dsl.koinConfiguration
+import com.charan.bingediary.presentation.navigation.NavigationHost
 
 @Composable
 fun Screen() {
-    MaterialTheme {
-        Column(
-            modifier = Modifier.fillMaxSize(),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally,
-        ) {
-            BasicText("Hello, ${BuildConfig}!")
+    KoinApplication(configuration = koinConfiguration<App>()) {
+        GoogleAuthProvider.create(credentials = GoogleAuthCredentials(serverId = BuildConfig.SUPABASE_KEY))
+        MaterialTheme {
+            NavigationHost()
         }
     }
 }

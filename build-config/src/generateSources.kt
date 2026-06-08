@@ -59,7 +59,7 @@ fun generateSources(
     }
 
     val fileSpec = FileSpec.builder(
-        packageName = "com.bingediary.config",
+        packageName = "com.charan.bingediary.config",
         fileName = "BuildConfig"
     )
         .addType(buildConfigObject.build())
