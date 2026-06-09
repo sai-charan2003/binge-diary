@@ -19,7 +19,7 @@ import org.koin.core.annotation.Single
             install(Auth)
             install(Postgrest)
             install(ComposeAuth){
-                googleNativeLogin(BuildConfig.SUPABASE_KEY)
+                googleNativeLogin(BuildConfig.GOOGLE_WEB_CLIENT_ID)
             }
         }
     }

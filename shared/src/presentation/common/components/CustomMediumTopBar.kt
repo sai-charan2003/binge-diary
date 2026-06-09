@@ -14,7 +14,7 @@ import androidx.compose.ui.Modifier
 fun CustomMediumTopBar(
      modifier: Modifier = Modifier,
      showBackButton : Boolean = false,
-     onBackClick : () -> Unit,
+     onBackClick : () -> Unit = {},
      title : String,
      subTitle : String = ""
 ) {

@@ -13,7 +13,7 @@ import com.charan.bingediary.presentation.navigation.NavigationHost
 @Composable
 fun Screen() {
     KoinApplication(configuration = koinConfiguration<App>()) {
-        GoogleAuthProvider.create(credentials = GoogleAuthCredentials(serverId = BuildConfig.SUPABASE_KEY))
+        GoogleAuthProvider.create(credentials = GoogleAuthCredentials(serverId = BuildConfig.GOOGLE_WEB_CLIENT_ID))
         MaterialTheme {
             NavigationHost()
         }
