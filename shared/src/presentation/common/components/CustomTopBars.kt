@@ -2,7 +2,6 @@ package com.charan.bingediary.presentation.common.components
 
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -16,6 +15,9 @@ import androidx.compose.material3.TopAppBarDefaults
 
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FilledTonalIconButton
+import androidx.compose.material3.IconButtonDefaults
+import androidx.compose.material3.TopAppBar
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -37,14 +39,34 @@ fun CustomMediumTopBar(
         },
         navigationIcon = {
             if(showBackButton){
-                IconButton(
-                    onClick = onBackClick
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.ArrowBack,
-                        contentDescription = "Back"
-                    )
-                }
+            CustomBackButton { onBackClick() }}
+
+        },
+        actions = actions,
+        scrollBehavior = scrollBehavior
+    )
+}
+@Composable
+fun CustomTopBar(
+    modifier: Modifier = Modifier,
+    showBackButton : Boolean = false,
+    onBackClick : () -> Unit = {},
+    title : String,
+    subTitle : String = "",
+    colors: TopAppBarColors = TopAppBarDefaults.topAppBarColors(),
+    actions: @Composable RowScope.() -> Unit = {},
+    scrollBehavior: TopAppBarScrollBehavior? = null
+
+) {
+    TopAppBar(
+        modifier = modifier,
+        colors = colors,
+        title = {
+            Text(text = title)
+        },
+        navigationIcon = {
+            if(showBackButton){
+                CustomBackButton { onBackClick() }
 
             }
 
@@ -52,4 +74,18 @@ fun CustomMediumTopBar(
         actions = actions,
         scrollBehavior = scrollBehavior
     )
+}
+@Composable
+private fun CustomBackButton(
+    onBackClick: () -> Unit
+) {
+    FilledTonalIconButton(
+        onClick = onBackClick,
+        shapes = IconButtonDefaults.shapes(),
+    ) {
+        Icon(
+            imageVector = Icons.Default.ArrowBack,
+            contentDescription = "Back"
+        )
+    }
 }

@@ -1,5 +1,15 @@
 package com.charan.bingediary.presentation.navigation
 
+import androidx.compose.animation.AnimatedContentTransitionScope
+import androidx.compose.animation.AnimatedContentTransitionScope.SlideDirection
+import androidx.compose.animation.core.LinearEasing
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideInVertically
+import androidx.compose.animation.slideOutHorizontally
+import androidx.compose.animation.togetherWith
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -39,6 +49,36 @@ fun NavigationHost() {
             rememberSaveableStateHolderNavEntryDecorator(),
             rememberViewModelStoreNavEntryDecorator()
         ),
+        transitionSpec = {
+            (fadeIn() + slideIntoContainer(
+                AnimatedContentTransitionScope.SlideDirection.Start,
+                initialOffset = { 100 },
+                animationSpec = (tween(easing = LinearEasing, durationMillis = 200))
+            )) togetherWith
+                    (fadeOut() + slideOutOfContainer(
+                        AnimatedContentTransitionScope.SlideDirection.End,
+                        targetOffset = { -100 },
+                        animationSpec = (tween(easing = LinearEasing, durationMillis = 200))
+                    ))
+        },
+        popTransitionSpec = {
+            (fadeIn() + slideIntoContainer(
+                AnimatedContentTransitionScope.SlideDirection.Start,
+                initialOffset = { -100 },
+                animationSpec = (tween(easing = LinearEasing, durationMillis = 200))
+            )) togetherWith
+                    (fadeOut() + slideOutOfContainer(
+                        AnimatedContentTransitionScope.SlideDirection.End,
+                        targetOffset = { 100 },
+                        animationSpec = (tween(easing = LinearEasing, durationMillis = 200))
+                    ))
+
+        },
+        predictivePopTransitionSpec = {
+            slideInHorizontally(initialOffsetX = { -it }) togetherWith
+                    slideOutHorizontally(targetOffsetX = { it })
+
+        },
         entryProvider = entryProvider {
             entry<NavigationDestination.Authentication> {
                 AuthenticationScreen(

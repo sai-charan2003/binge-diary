@@ -1,5 +1,6 @@
 package com.charan.bingediary.presentation.home
 
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -22,6 +23,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.runtime.remember
 import androidx.compose.ui.text.font.FontWeight
 import com.charan.bingediary.presentation.common.components.CustomMediumTopBar
 import com.charan.bingediary.presentation.home.components.MediaItemCard
@@ -35,6 +37,7 @@ fun HomeScreen(
 ) {
     val viewModel: HomeViewModel = koinViewModel()
     val state by viewModel.state.collectAsState()
+    val interactionSource = remember { MutableInteractionSource() }
 
     LaunchedEffect(viewModel) {
         viewModel.effect.collect { effect ->
@@ -54,7 +57,6 @@ fun HomeScreen(
         topBar = {
             CustomMediumTopBar(
                 title = "Binge Diary",
-
                 )
         }
     ) { innerPadding ->
