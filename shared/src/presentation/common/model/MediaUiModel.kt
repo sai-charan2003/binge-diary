@@ -6,5 +6,6 @@ data class MediaUiModel(
     val title : String,
     val posterPath : String,
     val backdropPath : String,
-    val rating : String
+    val rating : String,
+    val mediaType : MediaType
 )

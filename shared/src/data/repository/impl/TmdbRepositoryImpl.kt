@@ -1,7 +1,9 @@
 package com.charan.bingediary.data.repository.impl
 
 import com.charan.bingediary.data.remote.tmdb.datasource.TmdbDataSource
+import com.charan.bingediary.data.remote.tmdb.dto.MovieDetailsDto
 import com.charan.bingediary.data.remote.tmdb.dto.MovieResponseDto
+import com.charan.bingediary.data.remote.tmdb.dto.ShowDetailsDto
 import com.charan.bingediary.data.remote.tmdb.dto.ShowResponseDto
 import com.charan.bingediary.data.repository.TmdbRepository
 
@@ -27,6 +29,24 @@ class TmdbRepositoryImpl(
     ): Result<ShowResponseDto> {
         return runCatching {
             tmdbDataSource.getTrendingTvShows(watchRegion, page)
+        }
+    }
+
+    override suspend fun getMovieDetails(
+        movieId: Long,
+        language: String
+    ): Result<MovieDetailsDto> {
+        return runCatching {
+            tmdbDataSource.getMovieDetails(movieId, language)
+        }
+    }
+
+    override suspend fun getShowDetails(
+        seriesId: Long,
+        language: String
+    ): Result<ShowDetailsDto> {
+        return runCatching {
+            tmdbDataSource.getShowDetails(seriesId, language)
         }
     }
 }

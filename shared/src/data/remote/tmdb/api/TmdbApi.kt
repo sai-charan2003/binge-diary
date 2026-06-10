@@ -1,7 +1,9 @@
 package com.charan.bingediary.data.remote.tmdb.api
 
 import com.charan.bingediary.config.BuildConfig
+import com.charan.bingediary.data.remote.tmdb.dto.MovieDetailsDto
 import com.charan.bingediary.data.remote.tmdb.dto.MovieResponseDto
+import com.charan.bingediary.data.remote.tmdb.dto.ShowDetailsDto
 import com.charan.bingediary.data.remote.tmdb.dto.ShowResponseDto
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
@@ -41,6 +43,20 @@ class TmdbApi(
             parameter("watch_region", watchRegion)
             parameter("sort_by", "popularity.desc")
             parameter("page", page)
+        }
+    }
+
+    suspend fun getMovieDetails(movieId: Long, language: String = "en-US"): MovieDetailsDto {
+        return tmdbGet("movie/$movieId") {
+            parameter("language", language)
+            parameter("append_to_response", "credits")
+        }
+    }
+
+    suspend fun getShowDetails(seriesId: Long, language: String = "en-US"): ShowDetailsDto {
+        return tmdbGet("tv/$seriesId") {
+            parameter("language", language)
+            parameter("append_to_response", "credits")
         }
     }
 }

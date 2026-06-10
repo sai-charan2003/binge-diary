@@ -11,4 +11,8 @@ class TmdbDataSource(
     suspend fun getTrendingMovies(watchRegion: String, page: Int = 1) = tmdbApi.trendingMovies(watchRegion, page)
 
     suspend fun getTrendingTvShows(watchRegion: String, page: Int = 1) = tmdbApi.trendingTvShows(watchRegion, page)
+
+    suspend fun getMovieDetails(movieId: Long, language: String = "en-US") = tmdbApi.getMovieDetails(movieId, language)
+
+    suspend fun getShowDetails(seriesId: Long, language: String = "en-US") = tmdbApi.getShowDetails(seriesId, language)
 }

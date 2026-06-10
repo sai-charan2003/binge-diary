@@ -33,11 +33,8 @@ class HomeViewModel(
     fun onEvent(event: HomeEvent) {
         when (event) {
             HomeEvent.LoadTrending -> loadTrending()
-            is HomeEvent.OnMovieClicked -> emitEffect(
-                HomeEffect.NavigateToMovieDetails(event.movieId)
-            )
-            is HomeEvent.OnShowClicked -> emitEffect(
-                HomeEffect.NavigateToShowDetails(event.showId)
+            is HomeEvent.OnMediaClicked -> emitEffect(
+                HomeEffect.NavigateToContentDetails(event.mediaId, event.mediaType)
             )
             HomeEvent.ClearError -> clearError()
         }

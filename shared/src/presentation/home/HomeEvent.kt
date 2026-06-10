@@ -1,8 +1,9 @@
 package com.charan.bingediary.presentation.home
 
+import com.charan.bingediary.presentation.common.model.MediaType
+
 sealed class HomeEvent {
     data object LoadTrending : HomeEvent()
-    data class OnMovieClicked(val movieId: Int) : HomeEvent()
-    data class OnShowClicked(val showId: Long) : HomeEvent()
+    data class OnMediaClicked(val mediaId: Long, val mediaType: MediaType) : HomeEvent()
     data object ClearError : HomeEvent()
 }
