@@ -5,6 +5,7 @@ import com.charan.bingediary.data.remote.tmdb.dto.MovieDetailsDto
 import com.charan.bingediary.data.remote.tmdb.dto.MovieResponseDto
 import com.charan.bingediary.data.remote.tmdb.dto.ShowDetailsDto
 import com.charan.bingediary.data.remote.tmdb.dto.ShowResponseDto
+import com.charan.bingediary.data.remote.tmdb.dto.PersonDetailsDto
 import com.charan.bingediary.data.repository.TmdbRepository
 
 import org.koin.core.annotation.Single
@@ -47,6 +48,15 @@ class TmdbRepositoryImpl(
     ): Result<ShowDetailsDto> {
         return runCatching {
             tmdbDataSource.getShowDetails(seriesId, language)
+        }
+    }
+
+    override suspend fun getPersonDetails(
+        personId: Long,
+        language: String
+    ): Result<PersonDetailsDto> {
+        return runCatching {
+            tmdbDataSource.getPersonDetails(personId, language)
         }
     }
 }

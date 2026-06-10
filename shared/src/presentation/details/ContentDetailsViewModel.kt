@@ -46,6 +46,9 @@ class ContentDetailsViewModel(
         when (event) {
             ContentDetailsEvent.NavigateBack -> emitEffect(ContentDetailsEffect.NavigateBack)
             ContentDetailsEvent.ClearError -> clearError()
+            is ContentDetailsEvent.NavigateToPersonDetail -> {
+                emitEffect(ContentDetailsEffect.NavigateToPersonDetails(event.id))
+            }
         }
     }
 

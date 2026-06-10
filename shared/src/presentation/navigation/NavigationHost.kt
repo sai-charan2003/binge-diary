@@ -13,6 +13,7 @@ import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import com.charan.bingediary.presentation.authentication.AuthenticationScreen
 import com.charan.bingediary.presentation.home.HomeScreen
 import com.charan.bingediary.presentation.details.ContentDetailsScreen
+import com.charan.bingediary.presentation.person.PersonDetailsScreen
 import kotlinx.serialization.Serializable
 
 import com.charan.bingediary.presentation.common.model.MediaType
@@ -24,6 +25,8 @@ sealed class NavigationDestination : NavKey{
     data class Home(val userName: String, val isGuest: Boolean) : NavigationDestination()
     @Serializable
     data class ContentDetails(val mediaId: Long, val mediaType: MediaType) : NavigationDestination()
+    @Serializable
+    data class Person(val personId: Long) : NavigationDestination()
 }
 
 @Composable
@@ -59,6 +62,22 @@ fun NavigationHost() {
                         if (backStack.size > 1) {
                             backStack.removeLast()
                         }
+                    },
+                    onNavigateToPerson = { personId ->
+                        backStack.add(NavigationDestination.Person(personId))
+                    }
+                )
+            }
+            entry<NavigationDestination.Person> { dest ->
+                PersonDetailsScreen(
+                    personId = dest.personId,
+                    onNavigateBack = {
+                        if (backStack.size > 1) {
+                            backStack.removeLast()
+                        }
+                    },
+                    onNavigateToContentDetails = { mediaId, mediaType ->
+                        backStack.add(NavigationDestination.ContentDetails(mediaId, mediaType))
                     }
                 )
             }

@@ -12,6 +12,9 @@ import com.charan.bingediary.data.remote.tmdb.dto.MovieDetailsDto
 import com.charan.bingediary.data.remote.tmdb.dto.MovieResponseDto
 import com.charan.bingediary.data.remote.tmdb.dto.ShowDetailsDto
 import com.charan.bingediary.data.remote.tmdb.dto.CreatedByDto
+import com.charan.bingediary.data.remote.tmdb.dto.CreditsDto
+import com.charan.bingediary.data.remote.tmdb.dto.PersonCreditDto
+import com.charan.bingediary.data.remote.tmdb.dto.PersonDetailsDto
 import com.charan.bingediary.data.remote.tmdb.dto.ShowResponseDto
 import com.charan.bingediary.presentation.common.model.MediaUiModel
 
@@ -19,6 +22,8 @@ import com.charan.bingediary.presentation.common.model.MediaUiModel
 import com.charan.bingediary.presentation.common.model.MediaType
 import com.charan.bingediary.presentation.details.model.CastCrewUiModel
 import com.charan.bingediary.presentation.details.model.ContentDetailsUiModel
+import com.charan.bingediary.presentation.person.model.CreditUiModel
+import com.charan.bingediary.presentation.person.model.PersonUiModel
 import kotlin.jvm.JvmName
 
 fun MovieResponseDto.toMediaUIModel() : List<MediaUiModel> {
@@ -126,4 +131,47 @@ fun CreatedByDto.toCastCrewUiModel() : CastCrewUiModel {
 @JvmName("createdByToCastCrewUiModels")
 fun List<CreatedByDto>.toCastCrewUiModel(): List<CastCrewUiModel> {
     return this.map { it.toCastCrewUiModel() }
+}
+
+fun PersonDetailsDto.toPersonUiModel() : PersonUiModel {
+    val actingCredits = this.combinedCredits?.cast?.toCreditUiModel()
+        ?.distinctBy { it.id }
+        ?.sortedByDescending { it.releaseYear } ?: emptyList()
+
+    val crewMap = this.combinedCredits?.crew?.toCreditUiModel()
+        ?.distinctBy { it.id }
+        ?.sortedBy { it.releaseYear }
+        ?.groupBy { it.role } ?: emptyMap()
+
+    val creditsMap = mutableMapOf<String, List<CreditUiModel>>()
+    if (actingCredits.isNotEmpty()) {
+        creditsMap["Acting"] = actingCredits
+    }
+    creditsMap.putAll(crewMap)
+
+    return PersonUiModel(
+        id = this.id,
+        name = this.name,
+        biography = this.biography ?: "",
+        profileUrl = this.profilePath?.toPosterUrl() ?: "",
+        knownForDepartment = this.knownForDepartment ?: "",
+        creditsByDepartment = creditsMap
+    )
+}
+
+
+fun PersonCreditDto.toCreditUiModel() : CreditUiModel {
+    return CreditUiModel(
+        id = this.id,
+        title = this.title ?: this.name ?: "",
+        mediaType = if (this.mediaType == "tv") MediaType.TV_SHOW else MediaType.MOVIE,
+        posterUrl = this.posterPath?.toPosterUrl() ?: "",
+        releaseYear = (this.releaseDate ?: this.firstAirDate)?.substringBefore("-") ?: "",
+        role = this.character ?: this.job ?: ""
+    )
+
+}
+
+fun List<PersonCreditDto>.toCreditUiModel(): List<CreditUiModel> {
+    return this.map { it.toCreditUiModel() }
 }

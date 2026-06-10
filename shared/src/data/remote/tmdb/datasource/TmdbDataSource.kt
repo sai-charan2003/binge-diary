@@ -15,4 +15,6 @@ class TmdbDataSource(
     suspend fun getMovieDetails(movieId: Long, language: String = "en-US") = tmdbApi.getMovieDetails(movieId, language)
 
     suspend fun getShowDetails(seriesId: Long, language: String = "en-US") = tmdbApi.getShowDetails(seriesId, language)
+
+    suspend fun getPersonDetails(personId: Long, language: String = "en-US") = tmdbApi.getPersonDetails(personId, language)
 }

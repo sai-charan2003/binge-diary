@@ -2,6 +2,7 @@ package com.charan.bingediary.presentation.details
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -60,6 +61,7 @@ import com.charan.bingediary.presentation.common.components.CustomMediumTopBar
 import com.charan.bingediary.presentation.common.model.MediaType
 import com.charan.bingediary.presentation.details.model.CastCrewUiModel
 import androidx.compose.material3.TopAppBarDefaults
+import com.charan.bingediary.presentation.details.ContentDetailsEffect.NavigateToPersonDetails
 import org.koin.compose.viewmodel.koinViewModel
 import org.koin.core.parameter.parametersOf
 
@@ -68,7 +70,8 @@ import org.koin.core.parameter.parametersOf
 fun ContentDetailsScreen(
     mediaId: Long,
     mediaType: MediaType,
-    onNavigateBack: () -> Unit
+    onNavigateBack: () -> Unit,
+    onNavigateToPerson: (Long) -> Unit
 ) {
     val viewModel: ContentDetailsViewModel = koinViewModel { parametersOf(mediaId, mediaType) }
     val state by viewModel.state.collectAsState()
@@ -79,6 +82,7 @@ fun ContentDetailsScreen(
             when (effect) {
                 is ContentDetailsEffect.NavigateBack -> onNavigateBack()
                 is ContentDetailsEffect.ShowToast -> { /* Handle toast */ }
+                is ContentDetailsEffect.NavigateToPersonDetails -> onNavigateToPerson(effect.personId)
             }
         }
     }
@@ -225,22 +229,22 @@ fun ContentDetailsScreen(
 
                     // Directors Section
                     if (details.directors.isNotEmpty()) {
-                        item { PersonListSection(title = "Directors", persons = details.directors) }
+                        item { PersonListSection(title = "Directors", persons = details.directors, onPersonClick = onNavigateToPerson) }
                     }
 
                     // Writers Section
                     if (details.writers.isNotEmpty()) {
-                        item { PersonListSection(title = "Writers", persons = details.writers) }
+                        item { PersonListSection(title = "Writers", persons = details.writers, onPersonClick = onNavigateToPerson) }
                     }
 
                     // Producers Section
                     if (details.producers.isNotEmpty()) {
-                        item { PersonListSection(title = "Producers", persons = details.producers) }
+                        item { PersonListSection(title = "Producers", persons = details.producers, onPersonClick = onNavigateToPerson) }
                     }
 
                     // Cast Section
                     if (details.cast.isNotEmpty()) {
-                        item { PersonListSection(title = "Cast", persons = details.cast) }
+                        item { PersonListSection(title = "Cast", persons = details.cast, onPersonClick = onNavigateToPerson) }
                     }
                 }
             }
@@ -249,10 +253,12 @@ fun ContentDetailsScreen(
 }
 
 @Composable
-fun PersonItem(name: String, subtitle: String, imageUrl: String) {
+fun PersonItem(name: String, subtitle: String, imageUrl: String, onClick: () -> Unit) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier.width(88.dp)
+        modifier = Modifier
+            .width(88.dp)
+            .clickable { onClick() }
     ) {
         if (imageUrl.isNotEmpty()) {
             AsyncImage(
@@ -332,7 +338,8 @@ private fun FullScreenBackdrop(
 @Composable
 private fun PersonListSection(
     title: String,
-    persons: List<CastCrewUiModel>
+    persons: List<CastCrewUiModel>,
+    onPersonClick: (Long) -> Unit
 ) {
     Column {
         Text(
@@ -350,7 +357,8 @@ private fun PersonListSection(
                 PersonItem(
                     name = person.name,
                     subtitle = person.character,
-                    imageUrl = person.profileUrl
+                    imageUrl = person.profileUrl,
+                    onClick = { onPersonClick(person.id) }
                 )
             }
         }
