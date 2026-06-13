@@ -6,6 +6,7 @@ import com.charan.bingediary.data.remote.tmdb.dto.MovieResponseDto
 import com.charan.bingediary.data.remote.tmdb.dto.ShowDetailsDto
 import com.charan.bingediary.data.remote.tmdb.dto.ShowResponseDto
 import com.charan.bingediary.data.remote.tmdb.dto.PersonDetailsDto
+import com.charan.bingediary.data.remote.tmdb.dto.SearchResponseDto
 import com.charan.bingediary.data.repository.TmdbRepository
 
 import org.koin.core.annotation.Single
@@ -57,6 +58,15 @@ class TmdbRepositoryImpl(
     ): Result<PersonDetailsDto> {
         return runCatching {
             tmdbDataSource.getPersonDetails(personId, language)
+        }
+    }
+
+    override suspend fun searchMulti(
+        query: String,
+        page: Int
+    ): Result<SearchResponseDto> {
+        return runCatching {
+            tmdbDataSource.searchMulti(query, page)
         }
     }
 }

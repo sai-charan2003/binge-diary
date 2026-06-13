@@ -1,13 +1,11 @@
 package com.charan.bingediary.presentation.navigation
 
 import androidx.compose.animation.AnimatedContentTransitionScope
-import androidx.compose.animation.AnimatedContentTransitionScope.SlideDirection
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInHorizontally
-import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.animation.togetherWith
 import androidx.compose.runtime.Composable
@@ -15,24 +13,22 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.lifecycle.viewmodel.navigation3.rememberViewModelStoreNavEntryDecorator
 import androidx.navigation3.runtime.NavKey
-import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
 import androidx.navigation3.runtime.entryProvider
-import androidx.navigation3.runtime.rememberDecoratedNavEntries
 import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import com.charan.bingediary.presentation.authentication.AuthenticationScreen
-import com.charan.bingediary.presentation.home.HomeScreen
 import com.charan.bingediary.presentation.details.ContentDetailsScreen
 import com.charan.bingediary.presentation.person.PersonDetailsScreen
 import kotlinx.serialization.Serializable
 
 import com.charan.bingediary.presentation.common.model.MediaType
+import com.charan.bingediary.presentation.navigation.bottomNav.BottomNavHost
 
 sealed class NavigationDestination : NavKey{
     @Serializable
     data object Authentication : NavigationDestination()
     @Serializable
-    data class Home(val userName: String, val isGuest: Boolean) : NavigationDestination()
+    data class Bottom(val userName: String, val isGuest: Boolean) : NavigationDestination()
     @Serializable
     data class ContentDetails(val mediaId: Long, val mediaType: MediaType) : NavigationDestination()
     @Serializable
@@ -41,7 +37,7 @@ sealed class NavigationDestination : NavKey{
 
 @Composable
 fun NavigationHost() {
-    val backStack = rememberSaveable() { mutableStateListOf<Any>(NavigationDestination.Home("",false)) }
+    val backStack = rememberSaveable() { mutableStateListOf<Any>(NavigationDestination.Bottom("",false)) }
 
     NavDisplay(
         backStack = backStack,
@@ -83,14 +79,17 @@ fun NavigationHost() {
             entry<NavigationDestination.Authentication> {
                 AuthenticationScreen(
                     onNavigateToHome = {
-                        backStack.add(NavigationDestination.Home(userName = "Binge Explorer", isGuest = false))
+                        backStack.add(NavigationDestination.Bottom(userName = "Binge Explorer", isGuest = false))
                     }
                 )
             }
-            entry<NavigationDestination.Home> { dest ->
-                HomeScreen(
+            entry<NavigationDestination.Bottom> { dest ->
+                BottomNavHost(
                     onNavigateToContentDetails = { mediaId, mediaType ->
                         backStack.add(NavigationDestination.ContentDetails(mediaId, mediaType))
+                    },
+                    onNavigateToPerson = { personId ->
+                        backStack.add(NavigationDestination.Person(personId))
                     }
                 )
             }

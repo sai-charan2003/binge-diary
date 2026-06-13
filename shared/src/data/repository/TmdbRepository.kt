@@ -6,6 +6,7 @@ import com.charan.bingediary.data.remote.tmdb.dto.MovieResponseDto
 import com.charan.bingediary.data.remote.tmdb.dto.ShowDetailsDto
 import com.charan.bingediary.data.remote.tmdb.dto.ShowResponseDto
 import com.charan.bingediary.data.remote.tmdb.dto.PersonDetailsDto
+import com.charan.bingediary.data.remote.tmdb.dto.SearchResponseDto
 
 interface TmdbRepository {
     suspend fun getTrendingMovies(watchRegion: String, page: Int = 1) : Result<MovieResponseDto>
@@ -17,4 +18,6 @@ interface TmdbRepository {
     suspend fun getShowDetails(seriesId: Long, language: String = "en-US") : Result<ShowDetailsDto>
 
     suspend fun getPersonDetails(personId: Long, language: String = "en-US") : Result<PersonDetailsDto>
+
+    suspend fun searchMulti(query: String, page: Int = 1) : Result<SearchResponseDto>
 }

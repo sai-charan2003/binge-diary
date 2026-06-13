@@ -17,6 +17,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
@@ -33,7 +34,8 @@ import com.charan.bingediary.presentation.common.model.MediaType
 
 @Composable
 fun HomeScreen(
-    onNavigateToContentDetails: (Long, MediaType) -> Unit
+    onNavigateToContentDetails: (Long, MediaType) -> Unit,
+    bottomPadding: Dp = 0.dp
 ) {
     val viewModel: HomeViewModel = koinViewModel()
     val state by viewModel.state.collectAsState()
@@ -63,7 +65,7 @@ fun HomeScreen(
         LazyColumn(
             contentPadding = PaddingValues(
                 top = innerPadding.calculateTopPadding() + 16.dp,
-                bottom = innerPadding.calculateBottomPadding()
+                bottom = innerPadding.calculateBottomPadding() + bottomPadding
             ),
             modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.spacedBy(24.dp)

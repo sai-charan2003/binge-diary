@@ -6,6 +6,7 @@ import com.charan.bingediary.data.remote.tmdb.dto.MovieResponseDto
 import com.charan.bingediary.data.remote.tmdb.dto.ShowDetailsDto
 import com.charan.bingediary.data.remote.tmdb.dto.ShowResponseDto
 import com.charan.bingediary.data.remote.tmdb.dto.PersonDetailsDto
+import com.charan.bingediary.data.remote.tmdb.dto.SearchResponseDto
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.request.HttpRequestBuilder
@@ -65,6 +66,13 @@ class TmdbApi(
         return tmdbGet("person/$personId") {
             parameter("language", language)
             parameter("append_to_response", "combined_credits")
+        }
+    }
+
+    suspend fun searchMulti(query: String, page: Int = 1): SearchResponseDto {
+        return tmdbGet("search/multi") {
+            parameter("query", query)
+            parameter("page", page)
         }
     }
 }

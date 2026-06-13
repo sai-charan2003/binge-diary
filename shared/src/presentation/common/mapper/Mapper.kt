@@ -16,6 +16,7 @@ import com.charan.bingediary.data.remote.tmdb.dto.CreditsDto
 import com.charan.bingediary.data.remote.tmdb.dto.PersonCreditDto
 import com.charan.bingediary.data.remote.tmdb.dto.PersonDetailsDto
 import com.charan.bingediary.data.remote.tmdb.dto.ShowResponseDto
+import com.charan.bingediary.data.remote.tmdb.dto.SearchResponseDto
 import com.charan.bingediary.presentation.common.model.MediaUiModel
 
 
@@ -52,6 +53,25 @@ fun ShowResponseDto.toMediaUIModel() : List<MediaUiModel> {
             mediaType = MediaType.TV_SHOW
         )
     }
+}
+
+fun SearchResponseDto.toMediaUIModel() : List<MediaUiModel> {
+    return this.results
+        .filter { it.mediaType == "movie" || it.mediaType == "tv" || it.mediaType == "person" }
+        .map { result ->
+            MediaUiModel(
+                id = result.id,
+                title = result.title ?: result.name ?: "",
+                posterPath = (result.posterPath ?: result.profilePath)?.toPosterUrl() ?: "",
+                backdropPath = result.backdropPath?.toBackdropUrl() ?: "",
+                rating = (result.voteAverage ?: 0.0).toRatingString(),
+                mediaType = when (result.mediaType) {
+                    "tv" -> MediaType.TV_SHOW
+                    "person" -> MediaType.PERSON
+                    else -> MediaType.MOVIE
+                }
+            )
+        }
 }
 
 

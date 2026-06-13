@@ -17,4 +17,6 @@ class TmdbDataSource(
     suspend fun getShowDetails(seriesId: Long, language: String = "en-US") = tmdbApi.getShowDetails(seriesId, language)
 
     suspend fun getPersonDetails(personId: Long, language: String = "en-US") = tmdbApi.getPersonDetails(personId, language)
+
+    suspend fun searchMulti(query: String, page: Int = 1) = tmdbApi.searchMulti(query, page)
 }

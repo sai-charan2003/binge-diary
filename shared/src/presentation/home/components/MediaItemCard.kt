@@ -25,14 +25,13 @@ fun MediaItemCard(
     imageUrl: String?,
     rating: String,
     onClick: () -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier.width(140.dp)
 ) {
     val interactionSource = remember { MutableInteractionSource() }
     AsyncImage(
         model = imageUrl,
         contentDescription = title,
         modifier = modifier
-            .width(140.dp)
             .aspectRatio(2f / 3f)
             .clip(MaterialTheme.shapes.medium)
             .clickable(

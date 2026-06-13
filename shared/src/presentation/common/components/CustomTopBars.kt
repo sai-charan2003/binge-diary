@@ -17,6 +17,7 @@ import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilledTonalIconButton
 import androidx.compose.material3.IconButtonDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.TopAppBar
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -27,7 +28,7 @@ fun CustomMediumTopBar(
     onBackClick : () -> Unit = {},
     title : String,
     subTitle : String = "",
-    colors: TopAppBarColors = TopAppBarDefaults.topAppBarColors(),
+    colors: TopAppBarColors = TopAppBarDefaults.topAppBarColors(scrolledContainerColor = MaterialTheme.colorScheme.surface),
     actions: @Composable RowScope.() -> Unit = {},
     scrollBehavior: TopAppBarScrollBehavior? = null
     ) {
@@ -53,7 +54,7 @@ fun CustomTopBar(
     onBackClick : () -> Unit = {},
     title : String,
     subTitle : String = "",
-    colors: TopAppBarColors = TopAppBarDefaults.topAppBarColors(),
+    colors: TopAppBarColors = TopAppBarDefaults.topAppBarColors(scrolledContainerColor = MaterialTheme.colorScheme.surface),
     actions: @Composable RowScope.() -> Unit = {},
     scrollBehavior: TopAppBarScrollBehavior? = null
 

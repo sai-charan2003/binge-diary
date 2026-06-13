@@ -27,6 +27,9 @@ dependencies@android:
   - io.insert-koin:koin-android
   - $ktor.client.okhttp
 
+dependencies@jvm:
+  - $ktor.client.cio
+
 settings:
   compose:
     enabled: true

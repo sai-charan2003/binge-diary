@@ -1,8 +1,10 @@
 package com.charan.bingediary.core.network
 
-import io.ktor.client.HttpClient
+import io.ktor.client.engine.HttpClientEngine
 import io.ktor.client.engine.darwin.Darwin
+import org.koin.core.annotation.Single
 
-actual fun createHttpClient(): HttpClient {
-    return HttpClient(Darwin)
+@Single
+actual fun createHttpClientEngine(): HttpClientEngine {
+    return Darwin.create()
 }

@@ -1,8 +1,10 @@
 package com.charan.bingediary.core.network
 
-import io.ktor.client.HttpClient
+import io.ktor.client.engine.HttpClientEngine
 import io.ktor.client.engine.cio.CIO
+import org.koin.core.annotation.Single
 
-actual fun createHttpClient(): HttpClient {
-    return HttpClient(CIO)
+@Single
+actual fun createHttpClientEngine(): HttpClientEngine {
+    return CIO.create()
 }
