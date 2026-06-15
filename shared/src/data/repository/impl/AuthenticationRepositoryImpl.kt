@@ -26,8 +26,8 @@ class AuthenticationRepositoryImpl(
 
     override suspend fun getUserDetails(): AccountInfo? {
         return try {
-            val user = supabaseRemoteDataSource.getUserDetails()
-            user?.let {
+            val user = supabaseRemoteDataSource.getUserDetails() ?: return null
+            user.let {
                 AccountInfo(
                     name = it.name,
                     email = it.email,
@@ -35,6 +35,7 @@ class AuthenticationRepositoryImpl(
                 )
             }
         } catch (e: Exception) {
+            println(e)
             null
         }
     }

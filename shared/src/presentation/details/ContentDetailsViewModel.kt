@@ -14,6 +14,8 @@ import kotlinx.coroutines.launch
 import org.koin.core.annotation.KoinViewModel
 
 import com.charan.bingediary.data.repository.TmdbRepository
+import com.charan.bingediary.data.repository.AuthenticationRepository
+import com.charan.bingediary.data.repository.UserMoviesRepository
 
 import com.charan.bingediary.presentation.common.model.MediaType
 
@@ -28,6 +30,8 @@ import com.charan.bingediary.presentation.details.model.ContentDetailsUiModel
 @KoinViewModel
 class ContentDetailsViewModel(
     private val tmdbRepository: TmdbRepository,
+    private val authenticationRepository: AuthenticationRepository,
+    private val userMoviesRepository: UserMoviesRepository,
     @InjectedParam private val mediaId: Long,
     @InjectedParam private val mediaType: MediaType
 ) : ViewModel() {
@@ -49,11 +53,80 @@ class ContentDetailsViewModel(
             is ContentDetailsEvent.NavigateToPersonDetail -> {
                 emitEffect(ContentDetailsEffect.NavigateToPersonDetails(event.id))
             }
+            ContentDetailsEvent.LogReviewClicked -> {
+                viewModelScope.launch {
+                    val user = authenticationRepository.getUserDetails()
+                    if (user != null) {
+                        _state.update { it.copy(showReviewBottomSheet = true) }
+                    } else {
+                        _state.update {
+                            it.copy(
+                                showAuthBottomSheet = true,
+                                authBottomSheetTitle = "Sign in to review this content"
+                            )
+                        }
+                    }
+                }
+            }
+            ContentDetailsEvent.WatchlistClicked -> {
+                viewModelScope.launch {
+                    val user = authenticationRepository.getUserDetails()
+                    if (user != null) {
+                        val currentStatus = _state.value.isInWatchlist
+                        if (currentStatus) {
+                            val success = userMoviesRepository.removeFromWatchlist(mediaId)
+                            if (success) {
+                                _state.update { it.copy(isInWatchlist = false) }
+                                emitEffect(ContentDetailsEffect.ShowToast("Removed from Watchlist!"))
+                            } else {
+                                emitEffect(ContentDetailsEffect.ShowToast("Failed to remove from watchlist"))
+                            }
+                        } else {
+                            val success = userMoviesRepository.addToWatchlist(mediaId)
+                            if (success) {
+                                _state.update { it.copy(isInWatchlist = true) }
+                                emitEffect(ContentDetailsEffect.ShowToast("Added to Watchlist!"))
+                            } else {
+                                emitEffect(ContentDetailsEffect.ShowToast("Failed to add to watchlist"))
+                            }
+                        }
+                    } else {
+                        _state.update {
+                            it.copy(
+                                showAuthBottomSheet = true,
+                                authBottomSheetTitle = "Sign in to add to your watchlist"
+                            )
+                        }
+                    }
+                }
+            }
+            ContentDetailsEvent.DismissAuthBottomSheet -> {
+                _state.update { it.copy(showAuthBottomSheet = false) }
+            }
+            ContentDetailsEvent.DismissReviewBottomSheet -> {
+                _state.update { it.copy(showReviewBottomSheet = false) }
+            }
+            ContentDetailsEvent.AuthSuccess -> {
+                _state.update { it.copy(showAuthBottomSheet = false) }
+                emitEffect(ContentDetailsEffect.ShowToast("Successfully authenticated!"))
+                viewModelScope.launch {
+                    val isInWatchlist = userMoviesRepository.getWatchlistStatus(mediaId)
+                    _state.update { it.copy(isInWatchlist = isInWatchlist) }
+                }
+            }
         }
     }
 
     private fun loadDetails(mediaId: Long, mediaType: MediaType) {
         _state.update { it.copy(isLoading = true, mediaId = mediaId, error = null) }
+        
+        viewModelScope.launch {
+            val user = authenticationRepository.getUserDetails()
+            if (user != null) {
+                val isInWatchlist = userMoviesRepository.getWatchlistStatus(mediaId)
+                _state.update { it.copy(isInWatchlist = isInWatchlist) }
+            }
+        }
         
         viewModelScope.launch {
             try {

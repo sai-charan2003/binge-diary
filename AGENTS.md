@@ -148,6 +148,8 @@ shared/config-release.properties
 * If the data is getting passed form one screen to another screen pass it to viewmodel using Injected parms https://insert-koin.io/docs/reference/koin-android/viewmodel/
 * Don't write unnecessary comments .
 * Always keep consistent padding across the app.
+* No custom fonts 
+* No Hardcoded font sizes. Use Material Theme typography styles and adjust them if necessary.
 
 ### UI
 

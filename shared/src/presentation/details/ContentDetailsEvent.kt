@@ -7,4 +7,10 @@ sealed class ContentDetailsEvent {
     data object ClearError : ContentDetailsEvent()
 
     data class NavigateToPersonDetail(val id : Long) : ContentDetailsEvent()
+
+    data object LogReviewClicked : ContentDetailsEvent()
+    data object WatchlistClicked : ContentDetailsEvent()
+    data object DismissAuthBottomSheet : ContentDetailsEvent()
+    data object DismissReviewBottomSheet : ContentDetailsEvent()
+    data object AuthSuccess : ContentDetailsEvent()
 }

@@ -17,6 +17,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Edit
+import androidx.compose.material.icons.filled.Check
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ContainedLoadingIndicator
@@ -26,6 +27,10 @@ import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.ModalBottomSheet
+import androidx.compose.material3.rememberModalBottomSheetState
+import com.charan.bingediary.presentation.authentication.AuthenticationScreen
+import com.charan.bingediary.presentation.logreview.LogReviewScreen
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -147,7 +152,7 @@ fun ContentDetailsScreen(
                                         horizontalArrangement = Arrangement.spacedBy(16.dp)
                                     ) {
                                         Button(
-                                            onClick = { /* Log Review */ },
+                                            onClick = { viewModel.onEvent(ContentDetailsEvent.LogReviewClicked) },
                                             modifier = Modifier.weight(1f),
                                             shapes = ButtonDefaults.shapes(),
 
@@ -157,15 +162,27 @@ fun ContentDetailsScreen(
                                             Spacer(Modifier.width(8.dp))
                                             Text("Log Review")
                                         }
-                                        OutlinedButton(
-                                            onClick = { /* Save to Watchlater */ },
-                                            modifier = Modifier.weight(1f),
-                                            shapes = ButtonDefaults.shapes()
-                                        ) {
-                                            Icon(Icons.Default.Add, contentDescription = null)
-                                            Spacer(Modifier.width(8.dp))
-                                            Text("Watchlist")
-                                        }
+                                         if (state.isInWatchlist) {
+                                             Button(
+                                                 onClick = { viewModel.onEvent(ContentDetailsEvent.WatchlistClicked) },
+                                                 modifier = Modifier.weight(1f),
+                                                 shapes = ButtonDefaults.shapes()
+                                             ) {
+                                                 Icon(Icons.Default.Check, contentDescription = null)
+                                                 Spacer(Modifier.width(8.dp))
+                                                 Text("In Watchlist")
+                                             }
+                                         } else {
+                                             OutlinedButton(
+                                                 onClick = { viewModel.onEvent(ContentDetailsEvent.WatchlistClicked) },
+                                                 modifier = Modifier.weight(1f),
+                                                 shapes = ButtonDefaults.shapes()
+                                             ) {
+                                                 Icon(Icons.Default.Add, contentDescription = null)
+                                                 Spacer(Modifier.width(8.dp))
+                                                 Text("Watchlist")
+                                             }
+                                         }
                                     }
                                 }
 
@@ -220,6 +237,36 @@ fun ContentDetailsScreen(
                 }
             }
 
+    }
+
+    if (state.showAuthBottomSheet) {
+        ModalBottomSheet(
+            onDismissRequest = { viewModel.onEvent(ContentDetailsEvent.DismissAuthBottomSheet) },
+            sheetState = rememberModalBottomSheetState()
+        ) {
+            AuthenticationScreen(
+                onNavigateToHome = {},
+                title = state.authBottomSheetTitle,
+                onAuthSuccess = {
+                    viewModel.onEvent(ContentDetailsEvent.AuthSuccess)
+                },
+            )
+        }
+    }
+
+    if (state.showReviewBottomSheet) {
+        ModalBottomSheet(
+            onDismissRequest = { viewModel.onEvent(ContentDetailsEvent.DismissReviewBottomSheet) },
+            sheetState = rememberModalBottomSheetState()
+        ) {
+            LogReviewScreen(
+                mediaId = mediaId,
+                mediaType = mediaType,
+                mediaTitle = state.details.title,
+                mediaYear = state.details.releaseYear,
+                onDismiss = { viewModel.onEvent(ContentDetailsEvent.DismissReviewBottomSheet) }
+            )
+        }
     }
 }
 
