@@ -5,6 +5,7 @@ dependencies:
   - androidx.activity:activity-compose:1.7.2
   - bom: io.insert-koin:koin-bom:4.2.1
   - io.insert-koin:koin-android
+  - androidx.core:core-splashscreen:1.2.0
 
 settings:
   compose: enabled

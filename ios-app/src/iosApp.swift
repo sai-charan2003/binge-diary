@@ -15,10 +15,12 @@ struct ContentView: View {
 }
 
 @main
-struct iosApp: App {
+struct iosApp: SwiftUI.App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .ignoresSafeArea()
         }
+    
     }
 }

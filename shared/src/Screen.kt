@@ -10,12 +10,13 @@ import com.charan.bingediary.di.App
 import org.koin.compose.KoinApplication
 import org.koin.plugin.module.dsl.koinConfiguration
 import com.charan.bingediary.presentation.navigation.NavigationHost
+import com.charan.bingediary.presentation.theme.BingeDiaryTheme
 
 @Composable
 fun Screen() {
     KoinApplication(configuration = koinConfiguration<App>()) {
         GoogleAuthProvider.create(credentials = GoogleAuthCredentials(serverId = BuildConfig.GOOGLE_WEB_CLIENT_ID))
-        MaterialTheme {
+        BingeDiaryTheme {
             Surface {
                 NavigationHost()
             }

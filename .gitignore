@@ -3,3 +3,11 @@ shared/config-debug.properties
 shared/config-release.properties
 /build/
 /.gemini/
+local.properties
+*.keystore
+*.jks
+.DS_Store
+xcuserdata/
+*.xcworkspace/
+google-services.json
+GoogleService-Info.plist
