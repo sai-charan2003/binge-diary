@@ -158,3 +158,30 @@ private fun createStarPath(width: Float, height: Float): Path {
     path.close()
     return path
 }
+
+@Composable
+fun ReadOnlyRatingBar(
+    rating: Float,
+    modifier: Modifier = Modifier,
+    stars: Int = 5,
+    starSize: Dp = 16.dp,
+    spacing: Dp = 4.dp,
+    activeColor: Color = MaterialTheme.colorScheme.primary,
+    inactiveColor: Color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.15f)
+) {
+    Row(
+        horizontalArrangement = Arrangement.spacedBy(spacing),
+        verticalAlignment = Alignment.CenterVertically,
+        modifier = modifier
+    ) {
+        repeat(stars) { index ->
+            val starFill = (rating - index).coerceIn(0f, 1f)
+            StarCanvas(
+                fill = starFill,
+                activeColor = activeColor,
+                inactiveColor = inactiveColor,
+                modifier = Modifier.size(starSize)
+            )
+        }
+    }
+}

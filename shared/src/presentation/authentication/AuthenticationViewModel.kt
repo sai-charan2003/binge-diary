@@ -3,7 +3,6 @@ package com.charan.bingediary.presentation.authentication
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.charan.bingediary.data.repository.AuthenticationRepository
-import com.charan.bingediary.utils.ProcessState
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -70,8 +69,9 @@ class AuthenticationViewModel(
                 return@launch
             }
             _state.value = _state.value.copy(isLoading = true, error = null)
-            when (val result = authenticationRepository.authorizeUser(idToken)) {
-                is ProcessState.Success -> {
+            val result = authenticationRepository.authorizeUser(idToken)
+            result.fold(
+                onSuccess = {
                     val userDetails = authenticationRepository.getUserDetails()
                     _state.value = _state.value.copy(
                         isLoading = false,
@@ -80,18 +80,15 @@ class AuthenticationViewModel(
                         userName = userDetails?.name ?: "Google User"
                     )
                     _effect.emit(AuthenticationEffect.NavigateToHome)
-                }
-                is ProcessState.Error -> {
+                },
+                onFailure = { error ->
                     _state.value = _state.value.copy(
                         isLoading = false,
-                        error = result.exception
+                        error = error.message ?: "Sign in failed"
                     )
-                    _effect.emit(AuthenticationEffect.ShowToast(result.exception))
+                    _effect.emit(AuthenticationEffect.ShowToast(error.message ?: "Sign in failed"))
                 }
-                else -> {
-                    _state.value = _state.value.copy(isLoading = false)
-                }
-            }
+            )
         }
     }
 

@@ -90,6 +90,10 @@ fun NavigationHost() {
                     },
                     onNavigateToPerson = { personId ->
                         backStack.add(NavigationDestination.Person(personId))
+                    },
+                    onNavigateToAuth = {
+                        backStack.clear()
+                        backStack.add(NavigationDestination.Authentication)
                     }
                 )
             }

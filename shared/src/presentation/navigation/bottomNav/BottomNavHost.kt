@@ -56,6 +56,7 @@ import com.charan.bingediary.presentation.navigation.bottom.BottomNavItem
 fun BottomNavHost(
     onNavigateToContentDetails: (Long, MediaType) -> Unit,
     onNavigateToPerson: (Long) -> Unit,
+    onNavigateToAuth: () -> Unit,
 ) {
     var selectedItemIndex by rememberSaveable { mutableIntStateOf(0) }
     val backStack = rememberSaveable { mutableStateListOf<Any>(BottomNavItem.Home) }
@@ -199,6 +200,8 @@ fun BottomNavHost(
                 }
                 entry<BottomNavItem.Profile> {
                     ProfileScreen(
+                        onNavigateToAuth = onNavigateToAuth,
+                        onNavigateToContentDetails = onNavigateToContentDetails,
                         bottomPadding = innerPadding.calculateBottomPadding()
                     )
                 }

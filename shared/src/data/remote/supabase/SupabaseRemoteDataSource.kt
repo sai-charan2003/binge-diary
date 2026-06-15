@@ -3,7 +3,6 @@ package com.charan.bingediary.data.remote.supabase
 import com.charan.bingediary.data.remote.model.UserDetailsDTO
 import com.charan.bingediary.data.remote.model.UserMovieDto
 import com.charan.bingediary.data.remote.model.ReviewDto
-import com.charan.bingediary.utils.ProcessState
 import com.charan.bingediary.core.USER_MOVIES_TABLE
 import com.charan.bingediary.core.REVIEWS_TABLE
 import io.github.jan.supabase.SupabaseClient
@@ -23,25 +22,25 @@ class SupabaseRemoteDataSource(
         client.auth.loadFromStorage()
     }
 
-    suspend fun authorizeUser(token: String): ProcessState<Boolean> {
+    suspend fun authorizeUser(token: String): Result<Boolean> {
         return try {
             client.auth.signInWith(IDToken) {
                 provider = Google
                 idToken = token
             }
-            ProcessState.Success(true)
+            Result.success(true)
         } catch (e: Exception) {
             println(e.message)
-            ProcessState.Error(e.message.toString())
+            Result.failure(e)
         }
     }
 
-    suspend fun signOutUser(): ProcessState<Boolean> {
+    suspend fun signOutUser(): Result<Boolean> {
         return try {
             client.auth.signOut()
-            ProcessState.Success(true)
+            Result.success(true)
         } catch (e: Exception) {
-            ProcessState.Error(e.message.toString())
+            Result.failure(e)
         }
     }
 
@@ -101,6 +100,21 @@ class SupabaseRemoteDataSource(
     suspend fun upsertReview(review: ReviewDto) {
         client.postgrest.from(REVIEWS_TABLE).upsert(review) {
             onConflict = "id"
+        }
+    }
+
+    suspend fun getUserReviews(userId: String): List<ReviewDto> {
+        return try {
+            client.postgrest.from(REVIEWS_TABLE)
+                .select {
+                    filter {
+                        eq("user_id", userId)
+                    }
+                }
+                .decodeList<ReviewDto>()
+        } catch (e: Exception) {
+            println("Error fetching user reviews: ${e.message}")
+            emptyList()
         }
     }
 }

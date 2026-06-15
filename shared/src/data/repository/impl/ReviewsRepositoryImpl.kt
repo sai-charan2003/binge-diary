@@ -58,4 +58,9 @@ class ReviewsRepositoryImpl(
         val userId = supabaseRemoteDataSource.getCurrentUserId() ?: return null
         return supabaseRemoteDataSource.getUserReview(userId, tmdbMovieId)
     }
+
+    override suspend fun getUserReviews(): List<ReviewDto> {
+        val userId = supabaseRemoteDataSource.getCurrentUserId() ?: return emptyList()
+        return supabaseRemoteDataSource.getUserReviews(userId)
+    }
 }

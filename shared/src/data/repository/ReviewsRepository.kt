@@ -16,4 +16,6 @@ interface ReviewsRepository {
     ): Boolean
 
     suspend fun getUserReview(tmdbMovieId: Long): ReviewDto?
+
+    suspend fun getUserReviews(): List<ReviewDto>
 }

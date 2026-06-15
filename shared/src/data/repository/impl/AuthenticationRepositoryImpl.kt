@@ -3,8 +3,6 @@ package com.charan.bingediary.data.repository.impl
 import com.charan.bingediary.data.remote.supabase.SupabaseRemoteDataSource
 import com.charan.bingediary.data.remote.model.AccountInfo
 import com.charan.bingediary.data.repository.AuthenticationRepository
-import com.charan.bingediary.utils.ProcessState
-import org.koin.core.annotation.Single
 import org.koin.core.annotation.Singleton
 
 @Singleton(binds = [AuthenticationRepository::class])
@@ -16,11 +14,11 @@ class AuthenticationRepositoryImpl(
         supabaseRemoteDataSource.loadSession()
     }
 
-    override suspend fun authorizeUser(token: String): ProcessState<Boolean> {
+    override suspend fun authorizeUser(token: String): Result<Boolean> {
         return supabaseRemoteDataSource.authorizeUser(token)
     }
 
-    override suspend fun signOutUser(): ProcessState<Boolean> {
+    override suspend fun signOutUser(): Result<Boolean> {
         return supabaseRemoteDataSource.signOutUser()
     }
 
