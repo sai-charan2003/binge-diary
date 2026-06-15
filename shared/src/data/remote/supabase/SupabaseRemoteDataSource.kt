@@ -117,4 +117,15 @@ class SupabaseRemoteDataSource(
             emptyList()
         }
     }
+
+    suspend fun getAllReviews(): List<com.charan.bingediary.data.remote.model.ReviewWithProfileDto> {
+        return try {
+            client.postgrest.from(REVIEWS_TABLE)
+                .select(columns = io.github.jan.supabase.postgrest.query.Columns.raw("*,user_profiles(username,avatar_url)"))
+                .decodeList<com.charan.bingediary.data.remote.model.ReviewWithProfileDto>()
+        } catch (e: Exception) {
+            println("Error fetching all reviews: ${e.message}")
+            emptyList()
+        }
+    }
 }

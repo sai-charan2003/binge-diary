@@ -195,6 +195,7 @@ fun BottomNavHost(
                 }
                 entry<BottomNavItem.Activity> {
                     ActivityScreen(
+                        onNavigateToContentDetails = onNavigateToContentDetails,
                         bottomPadding = innerPadding.calculateBottomPadding()
                     )
                 }

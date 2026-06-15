@@ -63,4 +63,8 @@ class ReviewsRepositoryImpl(
         val userId = supabaseRemoteDataSource.getCurrentUserId() ?: return emptyList()
         return supabaseRemoteDataSource.getUserReviews(userId)
     }
+
+    override suspend fun getAllReviews(): List<com.charan.bingediary.data.remote.model.ReviewWithProfileDto> {
+        return supabaseRemoteDataSource.getAllReviews()
+    }
 }

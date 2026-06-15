@@ -1,6 +1,7 @@
 package com.charan.bingediary.data.repository
 
 import com.charan.bingediary.data.remote.model.ReviewDto
+import com.charan.bingediary.data.remote.model.ReviewWithProfileDto
 
 interface ReviewsRepository {
     suspend fun saveReview(
@@ -18,4 +19,7 @@ interface ReviewsRepository {
     suspend fun getUserReview(tmdbMovieId: Long): ReviewDto?
 
     suspend fun getUserReviews(): List<ReviewDto>
+
+    suspend fun getAllReviews(): List<ReviewWithProfileDto>
 }
+
