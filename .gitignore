@@ -1,6 +1,7 @@
 /.idea/
 shared/config-debug.properties
 shared/config-release.properties
+/config-release.properties
 /build/
 /.gemini/
 local.properties
