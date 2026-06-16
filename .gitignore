@@ -11,3 +11,5 @@ xcuserdata/
 *.xcworkspace/
 google-services.json
 GoogleService-Info.plist
+/android-app/keystore.properties
+/android-app/release/

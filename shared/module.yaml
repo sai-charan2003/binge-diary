@@ -48,7 +48,7 @@ plugins:
   build-config:
     enabled: true
     propertiesFileName: config
-    buildType: "debug"
+    buildType: "release"
 
 
 
