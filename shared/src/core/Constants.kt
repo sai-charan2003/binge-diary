@@ -7,5 +7,5 @@ const val DIRECTOR_JOB = "Director"
 const val WRITER_JOB = "Story"
 const val PRODUCER_JOB = "Producer"
 
-const val USER_MOVIES_TABLE = "user_movies"
+const val USER_MEDIA_TABLE = "user_media"
 const val REVIEWS_TABLE = "reviews"

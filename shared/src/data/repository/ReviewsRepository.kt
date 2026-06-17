@@ -7,6 +7,7 @@ import kotlinx.coroutines.flow.Flow
 interface ReviewsRepository {
     suspend fun saveReview(
         tmdbMovieId: Long,
+        mediaType: String,
         reviewId: String?,
         userMovieId: String?,
         reviewText: String,

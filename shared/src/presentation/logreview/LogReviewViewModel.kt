@@ -16,17 +16,19 @@ import kotlinx.coroutines.launch
 import org.koin.core.annotation.InjectedParam
 import org.koin.core.annotation.KoinViewModel
 import com.charan.bingediary.data.repository.ReviewsRepository
-import com.charan.bingediary.data.repository.UserMoviesRepository
+import com.charan.bingediary.data.repository.UserMediaRepository
 
 @KoinViewModel
 class LogReviewViewModel(
     private val reviewsRepository: ReviewsRepository,
-    private val userMoviesRepository: UserMoviesRepository,
+    private val userMediaRepository: UserMediaRepository,
     @InjectedParam private val mediaId: Long,
     @InjectedParam private val mediaType: MediaType,
     @InjectedParam private val mediaTitle: String,
     @InjectedParam private val mediaYear: String
 ) : ViewModel() {
+
+    private val mediaTypeStr = if (mediaType == MediaType.MOVIE) "movie" else "show"
 
     private val _state = MutableStateFlow(
         LogReviewUiState(
@@ -46,7 +48,7 @@ class LogReviewViewModel(
     private fun loadExistingReview() {
         viewModelScope.launch {
             val review = reviewsRepository.getUserReview(mediaId).firstOrNull()
-            val userMovie = userMoviesRepository.getUserMovie(mediaId)
+            val userMovie = userMediaRepository.getUserMedia(mediaId, mediaTypeStr)
             _state.update {
                 it.copy(
                     reviewId = review?.id,
@@ -108,6 +110,7 @@ class LogReviewViewModel(
             _state.update { it.copy(isSaving = true, error = null) }
             val success = reviewsRepository.saveReview(
                 tmdbMovieId = mediaId,
+                mediaType = mediaTypeStr,
                 reviewId = _state.value.reviewId,
                 userMovieId = _state.value.userMovieId,
                 reviewText = _state.value.reviewText,

@@ -1,9 +1,9 @@
 package com.charan.bingediary.data.remote.supabase
 
 import com.charan.bingediary.data.remote.model.UserDetailsDTO
-import com.charan.bingediary.data.remote.model.UserMovieDto
+import com.charan.bingediary.data.remote.model.UserMediaDto
 import com.charan.bingediary.data.remote.model.ReviewDto
-import com.charan.bingediary.core.USER_MOVIES_TABLE
+import com.charan.bingediary.core.USER_MEDIA_TABLE
 import com.charan.bingediary.core.REVIEWS_TABLE
 import io.github.jan.supabase.SupabaseClient
 import io.github.jan.supabase.auth.auth
@@ -57,25 +57,26 @@ class SupabaseRemoteDataSource(
         return client.auth.currentUserOrNull()?.id
     }
 
-    suspend fun getUserMovie(userId: String, tmdbMovieId: Long): UserMovieDto? {
+    suspend fun getUserMedia(userId: String, tmdbId: Long, mediaType: String): UserMediaDto? {
         return try {
-            val list = client.postgrest.from(USER_MOVIES_TABLE)
+            val list = client.postgrest.from(USER_MEDIA_TABLE)
                 .select {
                     filter {
                         eq("user_id", userId)
-                        eq("tmdb_movie_id", tmdbMovieId)
+                        eq("tmdb_movie_id", tmdbId)
+                        eq("media_type", mediaType)
                     }
                 }
-                .decodeList<UserMovieDto>()
+                .decodeList<UserMediaDto>()
             list.firstOrNull()
         } catch (e: Exception) {
-            println("Error fetching user movie: ${e.message}")
+            println("Error fetching user media: ${e.message}")
             null
         }
     }
 
-    suspend fun upsertUserMovie(userMovie: UserMovieDto) {
-        client.postgrest.from(USER_MOVIES_TABLE).upsert(userMovie) {
+    suspend fun upsertUserMedia(userMedia: UserMediaDto) {
+        client.postgrest.from(USER_MEDIA_TABLE).upsert(userMedia) {
             onConflict = "id"
         }
     }

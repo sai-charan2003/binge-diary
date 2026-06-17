@@ -1,7 +1,7 @@
 package com.charan.bingediary.data.repository.impl
 
 import com.charan.bingediary.data.remote.model.ReviewDto
-import com.charan.bingediary.data.remote.model.UserMovieDto
+import com.charan.bingediary.data.remote.model.UserMediaDto
 import com.charan.bingediary.data.remote.supabase.SupabaseRemoteDataSource
 import com.charan.bingediary.data.repository.ReviewsRepository
 import org.koin.core.annotation.Singleton
@@ -26,6 +26,7 @@ class ReviewsRepositoryImpl(
     @OptIn(ExperimentalUuidApi::class)
     override suspend fun saveReview(
         tmdbMovieId: Long,
+        mediaType: String,
         reviewId: String?,
         userMovieId: String?,
         reviewText: String,
@@ -48,8 +49,8 @@ class ReviewsRepositoryImpl(
             supabaseRemoteDataSource.upsertReview(reviewDto)
             reviewDao.insertReview(reviewDto.toEntity())
 
-            // 2. Sync watch status & rating in user_movies via direct upsert (passing the fetched userMovieId UUID if it exists)
-            val movieDto = UserMovieDto(
+            // 2. Sync watch status & rating in user_media via direct upsert (passing the fetched userMovieId UUID if it exists)
+            val mediaDto = UserMediaDto(
                 id = userMovieId ?: Uuid.generateV4().toString(),
                 userId = userId ,
                 tmdbMovieId = tmdbMovieId,
@@ -57,10 +58,11 @@ class ReviewsRepositoryImpl(
                 isWatching = isWatching,
                 isWatched = isWatched,
                 isLoved = isLoved,
-                rating = rating.toDouble()
+                rating = rating.toDouble(),
+                mediaType = mediaType
             )
-            supabaseRemoteDataSource.upsertUserMovie(movieDto)
-            userMediaDao.insertUserMedia(movieDto.toEntity())
+            supabaseRemoteDataSource.upsertUserMedia(mediaDto)
+            userMediaDao.insertUserMedia(mediaDto.toEntity())
 
             true
         } catch (e: Exception) {

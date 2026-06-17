@@ -26,5 +26,7 @@ data class UserMediaEntity(
     @ColumnInfo(name = "added_at")
     val addedAt: String?,
     @ColumnInfo(name = "watched_at")
-    val watchedAt: String?
+    val watchedAt: String?,
+    @ColumnInfo(name = "media_type")
+    val mediaType: String
 )

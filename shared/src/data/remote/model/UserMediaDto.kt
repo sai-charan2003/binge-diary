@@ -5,7 +5,7 @@ import kotlinx.serialization.Serializable
 import kotlinx.serialization.EncodeDefault
 
 @Serializable
-data class UserMovieDto(
+data class UserMediaDto(
     @SerialName("id")
     @EncodeDefault(EncodeDefault.Mode.NEVER)
     val id: String? = null,
@@ -28,5 +28,7 @@ data class UserMovieDto(
     val addedAt: String? = null,
     @SerialName("watched_at")
     @EncodeDefault(EncodeDefault.Mode.NEVER)
-    val watchedAt: String? = null
+    val watchedAt: String? = null,
+    @SerialName("media_type")
+    val mediaType: String
 )

@@ -15,7 +15,7 @@ import org.koin.core.annotation.KoinViewModel
 
 import com.charan.bingediary.data.repository.TmdbRepository
 import com.charan.bingediary.data.repository.AuthenticationRepository
-import com.charan.bingediary.data.repository.UserMoviesRepository
+import com.charan.bingediary.data.repository.UserMediaRepository
 
 import com.charan.bingediary.presentation.common.model.MediaType
 
@@ -31,10 +31,12 @@ import com.charan.bingediary.presentation.details.model.ContentDetailsUiModel
 class ContentDetailsViewModel(
     private val tmdbRepository: TmdbRepository,
     private val authenticationRepository: AuthenticationRepository,
-    private val userMoviesRepository: UserMoviesRepository,
+    private val userMediaRepository: UserMediaRepository,
     @InjectedParam private val mediaId: Long,
     @InjectedParam private val mediaType: MediaType
 ) : ViewModel() {
+
+    private val mediaTypeStr = if (mediaType == MediaType.MOVIE) "movie" else "show"
 
     private val _state = MutableStateFlow(ContentDetailsState())
     val state: StateFlow<ContentDetailsState> = _state.asStateFlow()
@@ -74,7 +76,7 @@ class ContentDetailsViewModel(
                     if (user != null) {
                         val currentStatus = _state.value.isInWatchlist
                         if (currentStatus) {
-                            val success = userMoviesRepository.removeFromWatchlist(mediaId)
+                            val success = userMediaRepository.removeFromWatchlist(mediaId, mediaTypeStr)
                             if (success) {
                                 _state.update { it.copy(isInWatchlist = false) }
                                 emitEffect(ContentDetailsEffect.ShowToast("Removed from Watchlist!"))
@@ -82,7 +84,7 @@ class ContentDetailsViewModel(
                                 emitEffect(ContentDetailsEffect.ShowToast("Failed to remove from watchlist"))
                             }
                         } else {
-                            val success = userMoviesRepository.addToWatchlist(mediaId)
+                            val success = userMediaRepository.addToWatchlist(mediaId, mediaTypeStr)
                             if (success) {
                                 _state.update { it.copy(isInWatchlist = true) }
                                 emitEffect(ContentDetailsEffect.ShowToast("Added to Watchlist!"))
@@ -110,7 +112,7 @@ class ContentDetailsViewModel(
                 _state.update { it.copy(showAuthBottomSheet = false) }
                 emitEffect(ContentDetailsEffect.ShowToast("Successfully authenticated!"))
                 viewModelScope.launch {
-                    val isInWatchlist = userMoviesRepository.getWatchlistStatus(mediaId)
+                    val isInWatchlist = userMediaRepository.getWatchlistStatus(mediaId, mediaTypeStr)
                     _state.update { it.copy(isInWatchlist = isInWatchlist) }
                 }
             }
@@ -123,7 +125,7 @@ class ContentDetailsViewModel(
         viewModelScope.launch {
             val user = authenticationRepository.getUserDetails()
             if (user != null) {
-                val isInWatchlist = userMoviesRepository.getWatchlistStatus(mediaId)
+                val isInWatchlist = userMediaRepository.getWatchlistStatus(mediaId, mediaTypeStr)
                 _state.update { it.copy(isInWatchlist = isInWatchlist) }
             }
         }

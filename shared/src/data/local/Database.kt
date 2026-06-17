@@ -10,7 +10,7 @@ import com.charan.bingediary.data.local.dao.UserMediaDao
 import com.charan.bingediary.data.local.dao.ReviewDao
 import org.koin.core.annotation.Single
 
-@Database(entities = [UserMediaEntity::class, ReviewEntity::class], version = 1)
+@Database(entities = [UserMediaEntity::class, ReviewEntity::class], version = 2)
 @ConstructedBy(AppDatabaseConstructor::class)
 @Single
 abstract class BingeDiaryDatabase : RoomDatabase() {
