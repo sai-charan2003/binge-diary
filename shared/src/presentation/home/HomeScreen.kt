@@ -2,6 +2,7 @@ package com.charan.bingediary.presentation.home
 
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -24,7 +25,10 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.TopAppBarDefaults
+import com.charan.bingediary.presentation.common.components.BingePullToRefreshBox
 import androidx.compose.runtime.remember
+import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.text.font.FontWeight
 import com.charan.bingediary.presentation.common.components.CustomMediumTopBar
 import com.charan.bingediary.presentation.home.components.MediaItemCard
@@ -39,6 +43,7 @@ fun HomeScreen(
 ) {
     val viewModel: HomeViewModel = koinViewModel()
     val state by viewModel.state.collectAsState()
+    val scroll = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
     val interactionSource = remember { MutableInteractionSource() }
 
     LaunchedEffect(viewModel) {
@@ -56,49 +61,58 @@ fun HomeScreen(
     }
 
     Scaffold(
+        modifier = Modifier.nestedScroll(scroll.nestedScrollConnection),
         topBar = {
             CustomMediumTopBar(
                 title = "Binge Diary",
+                scrollBehavior = scroll
                 )
         }
     ) { innerPadding ->
-        LazyColumn(
-            contentPadding = PaddingValues(
-                top = innerPadding.calculateTopPadding() + 16.dp,
-                bottom = innerPadding.calculateBottomPadding() + bottomPadding
-            ),
-            modifier = Modifier.fillMaxSize(),
-            verticalArrangement = Arrangement.spacedBy(24.dp)
+        BingePullToRefreshBox(
+            isRefreshing = state.isLoading,
+            onRefresh = { viewModel.onEvent(HomeEvent.Refresh) },
+            indicatorPadding = PaddingValues(top = innerPadding.calculateTopPadding()),
+            modifier = Modifier.fillMaxSize()
         ) {
-            items(state.sections) { item ->
-                Column {
-                    SectionHeader(title = item.title)
-                    Spacer(modifier = Modifier.height(16.dp))
-                    LazyRow(
-                        horizontalArrangement = Arrangement.spacedBy(16.dp),
-                        contentPadding = PaddingValues(horizontal = 16.dp)
-                    ) {
-                        items(item.items) { mediaItem ->
-                            MediaItemCard(
-                                title = mediaItem.title,
-                                imageUrl = mediaItem.posterPath,
-                                rating = mediaItem.rating,
-                                onClick = {
-                                    viewModel.onEvent(
-                                        HomeEvent.OnMediaClicked(
-                                            mediaItem.id,
-                                            mediaItem.mediaType
+            LazyColumn(
+                contentPadding = PaddingValues(
+                    top = innerPadding.calculateTopPadding() + 16.dp,
+                    bottom = innerPadding.calculateBottomPadding() + bottomPadding + 16.dp
+                ),
+                modifier = Modifier.fillMaxSize(),
+                verticalArrangement = Arrangement.spacedBy(24.dp)
+            ) {
+                items(state.sections) { item ->
+                    Column {
+                        SectionHeader(title = item.title)
+                        Spacer(modifier = Modifier.height(16.dp))
+                        LazyRow(
+                            horizontalArrangement = Arrangement.spacedBy(16.dp),
+                            contentPadding = PaddingValues(horizontal = 16.dp)
+                        ) {
+                            items(item.items) { mediaItem ->
+                                MediaItemCard(
+                                    title = mediaItem.title,
+                                    imageUrl = mediaItem.posterPath,
+                                    rating = mediaItem.rating,
+                                    onClick = {
+                                        viewModel.onEvent(
+                                            HomeEvent.OnMediaClicked(
+                                                mediaItem.id,
+                                                mediaItem.mediaType
+                                            )
                                         )
-                                    )
-                                }
+                                    }
 
 
-                            )
+                                )
+                            }
+
                         }
-
                     }
-                }
 
+                }
             }
         }
     }

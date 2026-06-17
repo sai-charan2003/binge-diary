@@ -37,6 +37,7 @@ class HomeViewModel(
                 HomeEffect.NavigateToContentDetails(event.mediaId, event.mediaType)
             )
             HomeEvent.ClearError -> clearError()
+            HomeEvent.Refresh -> loadTrending()
         }
     }
 

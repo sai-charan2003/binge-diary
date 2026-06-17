@@ -21,6 +21,9 @@ dependencies:
   - org.jetbrains.compose.material:material-icons-extended:1.7.3
   - io.coil-kt.coil3:coil-compose:3.0.0-alpha10
   - io.coil-kt.coil3:coil-network-ktor3:3.0.0-alpha10
+  - androidx.room:room-runtime:2.8.4
+  - androidx.sqlite:sqlite-bundled:2.6.2
+  - org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1
 
 
 dependencies@android:
@@ -37,6 +40,11 @@ settings:
   kotlin:
     serialization: json
     version: 2.3.21
+    ksp:
+      processors:
+        - androidx.room:room-compiler:2.8.4
+      processorOptions:
+        room.schemaLocation: ./schema
     compilerPlugins:
       - id: io.insert-koin.compiler.plugin
         dependency: io.insert-koin:koin-compiler-plugin:1.0.0
@@ -48,7 +56,7 @@ plugins:
   build-config:
     enabled: true
     propertiesFileName: config
-    buildType: "release"
+    buildType: "debug"
 
 
 

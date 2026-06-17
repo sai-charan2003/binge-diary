@@ -18,6 +18,7 @@ import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.Job
 import org.koin.core.annotation.KoinViewModel
 
 @KoinViewModel
@@ -33,6 +34,8 @@ class ProfileViewModel(
     private val _effect = MutableSharedFlow<ProfileEffect>()
     val effect: SharedFlow<ProfileEffect> = _effect.asSharedFlow()
 
+    private var profileJob: Job? = null
+
     init {
         onEvent(ProfileEvent.LoadProfile)
     }
@@ -47,7 +50,8 @@ class ProfileViewModel(
 
     private fun loadProfile() {
         _state.update { it.copy(isLoading = true, error = "") }
-        viewModelScope.launch {
+        profileJob?.cancel()
+        profileJob = viewModelScope.launch {
             try {
                 val accountInfo = authenticationRepository.getUserDetails()
                 if (accountInfo == null) {
@@ -61,48 +65,53 @@ class ProfileViewModel(
                     }
                     return@launch
                 }
-                val reviews = reviewsRepository.getUserReviews()
-                val reviewedMovies = reviews.map { review ->
-                    async {
-                        // 1. Try movie details
-                        val movieResult = tmdbRepository.getMovieDetails(review.tmdbMovieId)
-                        if (movieResult.isSuccess) {
-                            val movie = movieResult.getOrNull()!!
-                            ReviewedMovieUiModel(
-                                mediaId = review.tmdbMovieId,
-                                title = movie.title,
-                                posterUrl = movie.posterPath?.toPosterUrl() ?: "",
-                                rating = review.rating,
-                                reviewText = review.reviewText,
-                                mediaType = MediaType.MOVIE
-                            )
-                        } else {
-                            // 2. Try show details
-                            val showResult = tmdbRepository.getShowDetails(review.tmdbMovieId)
-                            if (showResult.isSuccess) {
-                                val show = showResult.getOrNull()!!
+                
+                // Sync reviews from remote to local DB
+                reviewsRepository.syncUserReviews()
+
+                reviewsRepository.getUserReviews().collect { reviews ->
+                    val reviewedMovies = reviews.map { review ->
+                        async {
+                            // 1. Try movie details
+                            val movieResult = tmdbRepository.getMovieDetails(review.tmdbMovieId)
+                            if (movieResult.isSuccess) {
+                                val movie = movieResult.getOrNull()!!
                                 ReviewedMovieUiModel(
                                     mediaId = review.tmdbMovieId,
-                                    title = show.name,
-                                    posterUrl = show.posterPath?.toPosterUrl() ?: "",
+                                    title = movie.title,
+                                    posterUrl = movie.posterPath?.toPosterUrl() ?: "",
                                     rating = review.rating,
                                     reviewText = review.reviewText,
-                                    mediaType = MediaType.TV_SHOW
+                                    mediaType = MediaType.MOVIE
                                 )
                             } else {
-                                null
+                                // 2. Try show details
+                                val showResult = tmdbRepository.getShowDetails(review.tmdbMovieId)
+                                if (showResult.isSuccess) {
+                                    val show = showResult.getOrNull()!!
+                                    ReviewedMovieUiModel(
+                                        mediaId = review.tmdbMovieId,
+                                        title = show.name,
+                                        posterUrl = show.posterPath?.toPosterUrl() ?: "",
+                                        rating = review.rating,
+                                        reviewText = review.reviewText,
+                                        mediaType = MediaType.TV_SHOW
+                                    )
+                                } else {
+                                    null
+                                }
                             }
                         }
-                    }
-                }.awaitAll().filterNotNull()
+                    }.awaitAll().filterNotNull()
 
-                _state.update {
-                    it.copy(
-                        isLoading = false,
-                        isAuthenticated = true,
-                        accountInfo = accountInfo,
-                        reviewedMovies = reviewedMovies
-                    )
+                    _state.update {
+                        it.copy(
+                            isLoading = false,
+                            isAuthenticated = true,
+                            accountInfo = accountInfo,
+                            reviewedMovies = reviewedMovies
+                        )
+                    }
                 }
             } catch (e: Exception) {
                 _state.update { it.copy(isLoading = false, error = e.message ?: "Failed to load profile details") }

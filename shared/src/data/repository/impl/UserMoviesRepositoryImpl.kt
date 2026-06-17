@@ -5,9 +5,13 @@ import com.charan.bingediary.data.remote.supabase.SupabaseRemoteDataSource
 import com.charan.bingediary.data.repository.UserMoviesRepository
 import org.koin.core.annotation.Singleton
 
+import com.charan.bingediary.data.local.dao.UserMediaDao
+import com.charan.bingediary.data.local.mapper.toEntity
+
 @Singleton(binds = [UserMoviesRepository::class])
 class UserMoviesRepositoryImpl(
-    private val supabaseRemoteDataSource: SupabaseRemoteDataSource
+    private val supabaseRemoteDataSource: SupabaseRemoteDataSource,
+    private val userMediaDao: UserMediaDao
 ) : UserMoviesRepository {
 
     override suspend fun getWatchlistStatus(tmdbMovieId: Long): Boolean {
@@ -28,6 +32,7 @@ class UserMoviesRepositoryImpl(
                 isWatched = false
             )
             supabaseRemoteDataSource.upsertUserMovie(updated)
+            userMediaDao.insertUserMedia(updated.toEntity())
             true
         } catch (e: Exception) {
             println("Error adding to watchlist: ${e.message}")
@@ -42,7 +47,9 @@ class UserMoviesRepositoryImpl(
             if (existing != null) {
                 val updated = existing.copy(inWatchlist = false)
                 supabaseRemoteDataSource.upsertUserMovie(updated)
+                userMediaDao.insertUserMedia(updated.toEntity())
             }
+
             true
         } catch (e: Exception) {
             println("Error removing from watchlist: ${e.message}")

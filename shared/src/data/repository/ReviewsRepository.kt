@@ -2,6 +2,7 @@ package com.charan.bingediary.data.repository
 
 import com.charan.bingediary.data.remote.model.ReviewDto
 import com.charan.bingediary.data.remote.model.ReviewWithProfileDto
+import kotlinx.coroutines.flow.Flow
 
 interface ReviewsRepository {
     suspend fun saveReview(
@@ -16,9 +17,11 @@ interface ReviewsRepository {
         isLoved: Boolean
     ): Boolean
 
-    suspend fun getUserReview(tmdbMovieId: Long): ReviewDto?
+    fun getUserReview(tmdbMovieId: Long): Flow<ReviewDto?>
 
-    suspend fun getUserReviews(): List<ReviewDto>
+    fun getUserReviews(): Flow<List<ReviewDto>>
+
+    suspend fun syncUserReviews()
 
     suspend fun getAllReviews(): List<ReviewWithProfileDto>
 }

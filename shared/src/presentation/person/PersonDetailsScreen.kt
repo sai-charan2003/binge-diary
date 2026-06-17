@@ -47,6 +47,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
+import com.charan.bingediary.presentation.common.components.BingePullToRefreshBox
 import com.charan.bingediary.presentation.common.components.CustomMediumTopBar
 import com.charan.bingediary.presentation.common.components.CustomTopBar
 import com.charan.bingediary.presentation.common.components.PersonPlaceholder
@@ -65,7 +66,7 @@ fun PersonDetailsScreen(
 ) {
     val viewModel: PersonViewModel = koinViewModel { parametersOf(personId) }
     val state by viewModel.state.collectAsState()
-    val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
+    val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
 
     LaunchedEffect(viewModel) {
         viewModel.effect.collect { effect ->
@@ -93,18 +94,15 @@ fun PersonDetailsScreen(
             )
         }
     ) { innerPadding ->
-        LazyColumn(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(innerPadding),
+        BingePullToRefreshBox(
+            isRefreshing = state.isLoading,
+            onRefresh = { viewModel.onEvent(PersonEvent.LoadPerson(personId)) },
+            modifier = Modifier.padding(innerPadding)
         ) {
-            if (state.isLoading) {
-                item {
-                    Box(modifier = Modifier.fillMaxWidth().height(300.dp)) {
-                        ContainedLoadingIndicator(modifier = Modifier.align(Alignment.Center))
-                    }
-                }
-            } else if (state.errorMessage != null) {
+            LazyColumn(
+                modifier = Modifier.fillMaxSize()
+            ) {
+            if (state.errorMessage != null) {
                 item {
                     Box(modifier = Modifier.fillMaxWidth().height(300.dp)) {
                         Text(
@@ -202,7 +200,6 @@ fun PersonDetailsScreen(
                 }
             }
         }
+        }
     }
 }
-
-

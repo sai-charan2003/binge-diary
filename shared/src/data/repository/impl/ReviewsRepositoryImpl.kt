@@ -6,11 +6,24 @@ import com.charan.bingediary.data.remote.supabase.SupabaseRemoteDataSource
 import com.charan.bingediary.data.repository.ReviewsRepository
 import org.koin.core.annotation.Singleton
 
+import com.charan.bingediary.data.local.dao.ReviewDao
+import com.charan.bingediary.data.local.dao.UserMediaDao
+import com.charan.bingediary.data.local.mapper.toEntity
+import com.charan.bingediary.data.local.mapper.toDto
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.flow.map
+import kotlin.uuid.ExperimentalUuidApi
+import kotlin.uuid.Uuid
+
 @Singleton(binds = [ReviewsRepository::class])
 class ReviewsRepositoryImpl(
-    private val supabaseRemoteDataSource: SupabaseRemoteDataSource
+    private val supabaseRemoteDataSource: SupabaseRemoteDataSource,
+    private val reviewDao: ReviewDao,
+    private val userMediaDao: UserMediaDao
 ) : ReviewsRepository {
 
+    @OptIn(ExperimentalUuidApi::class)
     override suspend fun saveReview(
         tmdbMovieId: Long,
         reviewId: String?,
@@ -26,18 +39,19 @@ class ReviewsRepositoryImpl(
         return try {
             // 1. Save review via direct upsert (passing the fetched reviewId UUID if it exists)
             val reviewDto = ReviewDto(
-                id = reviewId,
+                id = reviewId ?: Uuid.generateV4().toString(),
                 userId = userId,
                 tmdbMovieId = tmdbMovieId,
                 reviewText = reviewText,
                 rating = rating
             )
             supabaseRemoteDataSource.upsertReview(reviewDto)
+            reviewDao.insertReview(reviewDto.toEntity())
 
             // 2. Sync watch status & rating in user_movies via direct upsert (passing the fetched userMovieId UUID if it exists)
             val movieDto = UserMovieDto(
-                id = userMovieId,
-                userId = userId,
+                id = userMovieId ?: Uuid.generateV4().toString(),
+                userId = userId ,
                 tmdbMovieId = tmdbMovieId,
                 inWatchlist = inWatchlist,
                 isWatching = isWatching,
@@ -46,6 +60,7 @@ class ReviewsRepositoryImpl(
                 rating = rating.toDouble()
             )
             supabaseRemoteDataSource.upsertUserMovie(movieDto)
+            userMediaDao.insertUserMedia(movieDto.toEntity())
 
             true
         } catch (e: Exception) {
@@ -54,14 +69,26 @@ class ReviewsRepositoryImpl(
         }
     }
 
-    override suspend fun getUserReview(tmdbMovieId: Long): ReviewDto? {
-        val userId = supabaseRemoteDataSource.getCurrentUserId() ?: return null
-        return supabaseRemoteDataSource.getUserReview(userId, tmdbMovieId)
+    override fun getUserReview(tmdbMovieId: Long): Flow<ReviewDto?> {
+        val userId = supabaseRemoteDataSource.getCurrentUserId() ?: return flowOf(null)
+        return reviewDao.getUserReviewForMovieFlow(userId, tmdbMovieId).map { it?.toDto() }
     }
 
-    override suspend fun getUserReviews(): List<ReviewDto> {
-        val userId = supabaseRemoteDataSource.getCurrentUserId() ?: return emptyList()
-        return supabaseRemoteDataSource.getUserReviews(userId)
+    override fun getUserReviews(): Flow<List<ReviewDto>> {
+        val userId = supabaseRemoteDataSource.getCurrentUserId() ?: return flowOf(emptyList())
+        return reviewDao.getUserReviews(userId).map { list -> list.map { it.toDto() } }
+    }
+
+    override suspend fun syncUserReviews() {
+        val userId = supabaseRemoteDataSource.getCurrentUserId() ?: return
+        try {
+            val remoteReviews = supabaseRemoteDataSource.getUserReviews(userId)
+            if (remoteReviews.isNotEmpty()) {
+                reviewDao.insertAll(remoteReviews.map { it.toEntity() })
+            }
+        } catch (e: Exception) {
+            println("Error syncing user reviews: ${e.message}")
+        }
     }
 
     override suspend fun getAllReviews(): List<com.charan.bingediary.data.remote.model.ReviewWithProfileDto> {

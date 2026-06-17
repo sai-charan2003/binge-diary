@@ -11,6 +11,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.launch
 import org.koin.core.annotation.InjectedParam
 import org.koin.core.annotation.KoinViewModel
@@ -44,7 +45,7 @@ class LogReviewViewModel(
 
     private fun loadExistingReview() {
         viewModelScope.launch {
-            val review = reviewsRepository.getUserReview(mediaId)
+            val review = reviewsRepository.getUserReview(mediaId).firstOrNull()
             val userMovie = userMoviesRepository.getUserMovie(mediaId)
             _state.update {
                 it.copy(
