@@ -14,6 +14,8 @@ settings:
     applicationId: com.charan.bingediary
     namespace: com.charan.bingediary
     minSdk: 24
+    versionName: 0.1.0
+    versionCode: 0
     signing:
       enabled: true
       propertiesFile: keystore.properties
